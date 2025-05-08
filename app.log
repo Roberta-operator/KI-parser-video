@@ -1,0 +1,259 @@
+2025-04-30 14:45:36,434 - app.main - INFO - Initializing database...
+2025-04-30 14:46:11,757 - app.main - INFO - Initializing database...
+2025-04-30 14:46:42,043 - app.main - INFO - Initializing database...
+2025-04-30 14:47:03,244 - app.main - INFO - Initializing database...
+2025-04-30 14:52:37,616 - app.main - INFO - Initializing database...
+2025-04-30 14:52:37,764 - app.database - INFO - Database tables created successfully
+2025-04-30 14:53:20,269 - app.main - INFO - Initializing database...
+2025-04-30 14:53:20,329 - app.database - INFO - Database tables created successfully
+2025-04-30 14:53:37,405 - app.auth - INFO - Successful login for user: Jasser
+2025-04-30 14:53:46,290 - app.utils.openai_agent - INFO - Starting release notes generation for: app/files\compleetgmbh-244-articles-1746004055.pdf
+2025-04-30 14:53:46,624 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-04-30 14:54:08,299 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-30 14:54:08,302 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-04-30 14:54:45,932 - app.main - INFO - Initializing database...
+2025-04-30 14:54:45,933 - app.main - INFO - Initializing database...
+2025-04-30 14:54:45,986 - app.database - INFO - Database tables created successfully
+2025-04-30 14:54:46,102 - app.database - INFO - Database tables created successfully
+2025-04-30 14:54:48,542 - app.main - INFO - Initializing database...
+2025-04-30 14:54:48,542 - app.main - INFO - Initializing database...
+2025-04-30 14:54:48,591 - app.database - INFO - Database tables created successfully
+2025-04-30 14:54:48,591 - app.database - INFO - Database tables created successfully
+2025-04-30 14:54:50,706 - app.main - INFO - Initializing database...
+2025-04-30 14:54:50,756 - app.database - INFO - Database tables created successfully
+2025-04-30 14:54:50,756 - app.database - INFO - Database tables created successfully
+2025-05-05 15:08:51,953 - app.main - INFO - Initializing database...
+2025-05-05 15:08:52,135 - app.database - INFO - Database tables created successfully
+2025-05-05 15:09:33,362 - app.auth - WARNING - Weak password attempt for username: Jasser
+2025-05-05 15:09:33,363 - app.database - ERROR - Database session error: 400: Password must be at least 8 characters and contain uppercase, lowercase, numbers, and special characters
+2025-05-05 15:09:47,422 - app.auth - WARNING - Weak password attempt for username: ahmed
+2025-05-05 15:09:47,423 - app.database - ERROR - Database session error: 400: Password must be at least 8 characters and contain uppercase, lowercase, numbers, and special characters
+2025-05-05 15:09:50,075 - app.auth - WARNING - Weak password attempt for username: ahmed
+2025-05-05 15:09:50,076 - app.database - ERROR - Database session error: 400: Password must be at least 8 characters and contain uppercase, lowercase, numbers, and special characters
+2025-05-05 15:10:19,828 - app.auth - INFO - Successfully created new user: Jasser
+2025-05-05 15:10:27,434 - app.auth - INFO - Successful login for user: Jasser
+2025-05-06 11:20:39,496 - app.main - INFO - Initializing database...
+2025-05-06 11:20:39,552 - app.database - INFO - Database tables created successfully
+2025-05-06 11:20:50,263 - app.routes.upload - INFO - File uploaded successfully: 40c5b733d0e2_sample-local-pdf.pdf
+2025-05-06 11:20:50,511 - app.utils.openai_agent - INFO - Starting release notes generation for: app/files/pdfs\40c5b733d0e2_sample-local-pdf.pdf
+2025-05-06 11:20:50,562 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-06 11:21:01,755 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-06 11:21:01,770 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-06 11:26:07,105 - app.main - INFO - Initializing database...
+2025-05-06 11:26:07,151 - app.database - INFO - Database tables created successfully
+2025-05-06 11:26:30,884 - app.main - INFO - Initializing database...
+2025-05-06 11:26:30,931 - app.database - INFO - Database tables created successfully
+2025-05-06 11:27:35,557 - app.main - INFO - Initializing database...
+2025-05-06 11:27:35,603 - app.database - INFO - Database tables created successfully
+2025-05-06 11:31:18,979 - app.routes.upload - INFO - File uploaded successfully: 40c5b733d0e2_sample-local-pdf.pdf
+2025-05-06 11:31:19,217 - app.utils.openai_agent - INFO - Starting release notes generation for: app/files/pdfs\40c5b733d0e2_sample-local-pdf.pdf
+2025-05-06 11:31:19,239 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-06 11:31:33,034 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-06 11:31:33,037 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-06 11:31:33,052 - app.routes.upload - INFO - File uploaded successfully: 302549117e2e_test_audio.wav
+2025-05-06 11:31:33,056 - app.routes.generate - ERROR - Error generating release notes: 400: Unsupported file type
+2025-05-06 11:31:33,056 - app.database - ERROR - Database session error: 500: 400: Unsupported file type
+2025-05-06 11:33:20,914 - app.main - INFO - Initializing database...
+2025-05-06 11:33:20,960 - app.database - INFO - Database tables created successfully
+2025-05-06 11:34:14,476 - app.main - INFO - Initializing database...
+2025-05-06 11:34:14,523 - app.database - INFO - Database tables created successfully
+2025-05-06 11:37:02,399 - app.routes.upload - INFO - File uploaded successfully: 40c5b733d0e2_sample-local-pdf.pdf
+2025-05-06 11:37:02,639 - app.utils.openai_agent - INFO - Starting release notes generation for: app/files/pdfs\40c5b733d0e2_sample-local-pdf.pdf
+2025-05-06 11:37:02,661 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-06 11:37:16,716 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-06 11:37:16,719 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-06 11:37:16,739 - app.routes.upload - INFO - File uploaded successfully: 9014e748ab3f_test_audio.wav
+2025-05-06 11:37:16,743 - app.routes.generate - ERROR - Error generating release notes: 400: Unsupported file type
+2025-05-06 11:37:16,744 - app.database - ERROR - Database session error: 500: 400: Unsupported file type
+2025-05-06 11:38:27,060 - app.main - INFO - Initializing database...
+2025-05-06 11:38:27,107 - app.database - INFO - Database tables created successfully
+2025-05-06 11:40:03,214 - app.main - INFO - Initializing database...
+2025-05-06 11:40:03,372 - app.database - INFO - Database tables created successfully
+2025-05-06 11:41:54,593 - app.main - INFO - Initializing database...
+2025-05-06 11:41:54,752 - app.database - INFO - Database tables created successfully
+2025-05-06 14:01:40,201 - app.main - INFO - Initializing database...
+2025-05-06 14:01:40,247 - app.database - INFO - Database tables created successfully
+2025-05-06 14:19:57,760 - app.routes.upload - INFO - File uploaded successfully: 40c5b733d0e2_sample-local-pdf.pdf
+2025-05-06 14:19:58,009 - app.utils.openai_agent - INFO - Starting release notes generation for: app/files/pdfs\40c5b733d0e2_sample-local-pdf.pdf
+2025-05-06 14:19:58,037 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-06 14:20:10,723 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-06 14:20:10,746 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-06 14:20:10,761 - app.routes.upload - INFO - File uploaded successfully: fe0f68bdf8cf_test_audio.wav
+2025-05-06 14:20:10,765 - app.routes.generate - ERROR - Error generating release notes: 400: Unsupported file type
+2025-05-06 14:20:10,765 - app.database - ERROR - Database session error: 500: 400: Unsupported file type
+2025-05-06 14:21:27,635 - app.main - INFO - Initializing database...
+2025-05-06 14:21:27,683 - app.database - INFO - Database tables created successfully
+2025-05-06 14:21:32,061 - app.main - INFO - Initializing database...
+2025-05-06 14:21:32,109 - app.database - INFO - Database tables created successfully
+2025-05-06 14:23:26,043 - app.main - INFO - Initializing database...
+2025-05-06 14:23:26,090 - app.database - INFO - Database tables created successfully
+2025-05-06 14:23:38,530 - app.routes.upload - INFO - File uploaded successfully: 40c5b733d0e2_sample-local-pdf.pdf
+2025-05-06 14:23:38,769 - app.utils.openai_agent - INFO - Starting release notes generation for: app/files/pdfs\40c5b733d0e2_sample-local-pdf.pdf
+2025-05-06 14:23:38,792 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-06 14:23:52,533 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-06 14:23:52,535 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-06 14:23:52,542 - app.routes.upload - INFO - File uploaded successfully: fe0f68bdf8cf_test_audio.wav
+2025-05-06 14:23:52,546 - app.routes.generate - ERROR - Error generating release notes: 400: Unsupported file type
+2025-05-06 14:23:52,546 - app.database - ERROR - Database session error: 500: 400: Unsupported file type
+2025-05-06 14:25:20,950 - app.main - INFO - Initializing database...
+2025-05-06 14:25:20,997 - app.database - INFO - Database tables created successfully
+2025-05-06 14:25:43,741 - app.auth - INFO - Successful login for user: Jasser
+2025-05-07 15:22:08,310 - app.main - INFO - Initializing database...
+2025-05-07 15:22:08,361 - app.database - INFO - Database tables created successfully
+2025-05-07 15:22:10,125 - app.auth - INFO - Successful login for user: Jasser
+2025-05-07 15:22:26,767 - app.utils.openai_agent - INFO - Starting release notes generation for: app/files/docs\compleetgmbh-244-articles-1746004055.pdf
+2025-05-07 15:22:27,208 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-07 15:22:43,790 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 15:22:43,801 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-07 15:23:19,323 - app.main - INFO - Initializing database...
+2025-05-07 15:23:19,375 - app.database - INFO - Database tables created successfully
+2025-05-07 15:24:04,335 - app.main - INFO - Initializing database...
+2025-05-07 15:24:04,385 - app.database - INFO - Database tables created successfully
+2025-05-07 18:50:20,295 - app.main - INFO - Initializing database...
+2025-05-07 18:50:20,392 - app.database - INFO - Database tables created successfully
+2025-05-07 18:50:23,878 - app.auth - INFO - Successful login for user: Jasser
+2025-05-07 18:50:36,497 - app.utils.openai_agent - INFO - Successfully loaded reference template
+2025-05-07 18:53:46,956 - app.utils.openai_agent - INFO - Starting release notes generation
+2025-05-07 18:53:46,975 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-07 18:54:18,291 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 18:54:18,300 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-07 18:57:37,784 - app.main - INFO - Initializing database...
+2025-05-07 18:57:37,835 - app.database - INFO - Database tables created successfully
+2025-05-07 18:57:46,499 - app.auth - INFO - Successful login for user: Jasser
+2025-05-07 18:58:09,422 - app.utils.openai_agent - INFO - Successfully loaded reference template
+2025-05-07 18:58:17,424 - app.utils.openai_agent - INFO - Starting release notes generation
+2025-05-07 18:58:17,432 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-07 18:58:38,460 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 18:58:38,464 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-07 19:06:18,824 - app.main - INFO - Initializing database...
+2025-05-07 19:06:18,874 - app.database - INFO - Database tables created successfully
+2025-05-07 19:08:01,290 - app.main - INFO - Initializing database...
+2025-05-07 19:08:01,442 - app.database - INFO - Database tables created successfully
+2025-05-07 19:08:16,957 - app.auth - INFO - Successful login for user: Jasser
+2025-05-07 19:08:32,396 - app.utils.openai_agent - INFO - Starting release notes generation
+2025-05-07 19:08:32,407 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-07 19:08:55,648 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-07 19:08:55,695 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 11:23:29,909 - app.main - INFO - Initializing database...
+2025-05-08 11:23:29,980 - app.database - INFO - Database tables created successfully
+2025-05-08 11:23:45,542 - app.auth - INFO - Successful login for user: Jasser
+2025-05-08 12:08:35,722 - app.main - INFO - Initializing database...
+2025-05-08 12:08:35,807 - app.database - INFO - Database tables created successfully
+2025-05-08 12:09:17,000 - app.auth - INFO - Successful login for user: Jasser
+2025-05-08 12:09:23,383 - app.utils.openai_agent - INFO - Starting release notes generation
+2025-05-08 12:09:23,394 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-08 12:09:44,443 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 12:09:44,451 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 12:10:07,528 - app.utils.openai_agent - INFO - Starting release notes generation
+2025-05-08 12:10:07,540 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-08 12:10:25,753 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 12:10:25,755 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 12:30:36,086 - app.main - INFO - Initializing database...
+2025-05-08 12:30:36,135 - app.database - INFO - Database tables created successfully
+2025-05-08 12:30:50,650 - app.auth - INFO - Successful login for user: Jasser
+2025-05-08 12:30:56,208 - app.utils.openai_agent - INFO - Starting release notes generation
+2025-05-08 12:30:56,215 - app.utils.openai_agent - INFO - Calling OpenAI API
+2025-05-08 12:31:14,285 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 12:31:14,404 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 12:31:34,122 - app.auth - INFO - Successful login for user: Jasser
+2025-05-08 12:31:59,457 - app.main - INFO - Initializing database...
+2025-05-08 12:31:59,509 - app.database - INFO - Database tables created successfully
+2025-05-08 12:32:28,547 - app.main - INFO - Initializing database...
+2025-05-08 12:32:28,598 - app.database - INFO - Database tables created successfully
+2025-05-08 12:33:10,260 - app.main - INFO - Initializing database...
+2025-05-08 12:33:10,414 - app.database - INFO - Database tables created successfully
+2025-05-08 12:34:00,950 - app.main - INFO - Initializing database...
+2025-05-08 12:34:01,000 - app.database - INFO - Database tables created successfully
+2025-05-08 12:34:09,635 - app.auth - INFO - Successful login for user: Jasser
+2025-05-08 12:34:16,308 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 12:34:16,313 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-08 12:34:48,872 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 12:34:48,881 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 12:38:15,833 - app.main - INFO - Initializing database...
+2025-05-08 12:38:15,883 - app.database - INFO - Database tables created successfully
+2025-05-08 12:38:33,247 - app.auth - INFO - Successful login for user: Jasser
+2025-05-08 12:40:07,049 - app.main - INFO - Initializing database...
+2025-05-08 12:40:07,096 - app.database - INFO - Database tables created successfully
+2025-05-08 12:40:43,160 - app.main - INFO - Initializing database...
+2025-05-08 12:40:43,206 - app.database - INFO - Database tables created successfully
+2025-05-08 12:41:03,191 - app.main - INFO - Initializing database...
+2025-05-08 12:41:03,342 - app.database - INFO - Database tables created successfully
+2025-05-08 12:41:26,040 - app.auth - INFO - Successful login for user: Jasser
+2025-05-08 12:42:12,991 - app.main - INFO - Initializing database...
+2025-05-08 12:42:13,043 - app.database - INFO - Database tables created successfully
+2025-05-08 12:42:49,518 - app.main - INFO - Initializing database...
+2025-05-08 12:42:49,565 - app.database - INFO - Database tables created successfully
+2025-05-08 12:43:18,372 - app.main - INFO - Initializing database...
+2025-05-08 12:43:18,422 - app.database - INFO - Database tables created successfully
+2025-05-08 12:43:31,985 - app.main - INFO - Initializing database...
+2025-05-08 12:43:32,038 - app.database - INFO - Database tables created successfully
+2025-05-08 12:43:32,767 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 12:43:32,775 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-08 12:43:49,988 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 12:43:50,016 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 12:44:04,774 - app.auth - INFO - Successful login for user: Jasser
+2025-05-08 12:45:13,038 - app.main - INFO - Initializing database...
+2025-05-08 12:45:13,087 - app.database - INFO - Database tables created successfully
+2025-05-08 12:45:13,251 - app.main - INFO - Initializing database...
+2025-05-08 12:45:13,398 - app.database - INFO - Database tables created successfully
+2025-05-08 12:46:08,773 - app.main - INFO - Initializing database...
+2025-05-08 12:46:08,830 - app.database - INFO - Database tables created successfully
+2025-05-08 12:46:08,901 - app.main - INFO - Initializing database...
+2025-05-08 12:46:08,947 - app.database - INFO - Database tables created successfully
+2025-05-08 12:47:34,811 - app.main - INFO - Initializing database...
+2025-05-08 12:47:34,861 - app.database - INFO - Database tables created successfully
+2025-05-08 12:47:35,604 - app.main - INFO - Initializing database...
+2025-05-08 12:47:35,759 - app.database - INFO - Database tables created successfully
+2025-05-08 12:47:51,280 - app.main - INFO - Initializing database...
+2025-05-08 12:47:51,338 - app.database - INFO - Database tables created successfully
+2025-05-08 12:47:51,956 - app.main - INFO - Initializing database...
+2025-05-08 12:47:52,110 - app.database - INFO - Database tables created successfully
+2025-05-08 12:49:10,708 - app.main - INFO - Initializing database...
+2025-05-08 12:49:10,723 - app.main - INFO - Initializing database...
+2025-05-08 12:49:10,760 - app.database - INFO - Database tables created successfully
+2025-05-08 12:49:10,770 - app.database - INFO - Database tables created successfully
+2025-05-08 12:51:14,686 - app.main - INFO - Initializing database...
+2025-05-08 12:51:14,745 - app.database - INFO - Database tables created successfully
+2025-05-08 12:51:15,056 - app.main - INFO - Initializing database...
+2025-05-08 12:51:15,138 - app.database - INFO - Database tables created successfully
+2025-05-08 12:51:18,368 - app.main - INFO - Initializing database...
+2025-05-08 12:51:18,424 - app.database - INFO - Database tables created successfully
+2025-05-08 12:51:39,239 - app.auth - INFO - Successful login for user: Jasser
+2025-05-08 12:51:43,985 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 12:51:43,993 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-08 12:52:05,688 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 12:52:05,715 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 12:52:27,951 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 12:52:27,958 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-08 12:52:41,744 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 12:52:41,745 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 12:54:05,743 - app.main - INFO - Initializing database...
+2025-05-08 12:54:05,793 - app.database - INFO - Database tables created successfully
+2025-05-08 12:54:07,171 - app.main - INFO - Initializing database...
+2025-05-08 12:54:07,218 - app.database - INFO - Database tables created successfully
+2025-05-08 12:55:20,183 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 12:55:20,190 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-08 12:55:44,562 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 12:55:44,565 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 12:56:08,081 - app.main - INFO - Initializing database...
+2025-05-08 12:56:08,236 - app.database - INFO - Database tables created successfully
+2025-05-08 12:56:08,699 - app.main - INFO - Initializing database...
+2025-05-08 12:56:08,747 - app.database - INFO - Database tables created successfully
+2025-05-08 13:08:17,962 - app.main - INFO - Initializing database...
+2025-05-08 13:08:18,023 - app.database - INFO - Database tables created successfully
+2025-05-08 13:08:29,627 - app.auth - INFO - Successful login for user: Jasser
+2025-05-08 13:08:38,823 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 13:08:38,834 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-08 13:09:05,064 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 13:09:05,083 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 13:29:04,065 - app.main - INFO - Initializing database...
+2025-05-08 13:29:04,113 - app.database - INFO - Database tables created successfully
+2025-05-08 13:35:35,934 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-08 13:35:35,935 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 13:35:35,942 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-08 13:35:53,448 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 13:35:53,453 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 13:36:06,338 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 13:36:06,355 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-08 13:36:28,380 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 13:36:28,387 - app.utils.openai_agent - INFO - Successfully generated release notes
