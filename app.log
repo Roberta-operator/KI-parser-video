@@ -257,3 +257,545 @@
 2025-05-08 13:36:06,355 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
 2025-05-08 13:36:28,380 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-08 13:36:28,387 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 15:52:39,995 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-08 15:52:39,995 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 15:52:40,121 - app.utils.openai_agent - INFO - Starting transcription with Whisper
+2025-05-08 15:52:58,741 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-08 15:52:58,819 - app.utils.openai_agent - INFO - Successfully transcribed media file
+2025-05-08 15:52:58,819 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-08 15:53:27,609 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 15:53:27,619 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-08 16:45:57,447 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-08 16:45:57,448 - app.utils.openai_agent - INFO - Starting release notes generation from URL
+2025-05-08 16:46:02,428 - app.utils.openai_agent - ERROR - Error downloading YouTube video: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-05-08 16:46:02,429 - app.utils.openai_agent - ERROR - Failed to process video from URL
+2025-05-08 16:46:02,429 - app.routes.generate - ERROR - Error generating from URL: 400: Failed to process the video from URL
+2025-05-08 16:49:18,603 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-08 16:49:18,603 - app.utils.openai_agent - INFO - Starting release notes generation from URL
+2025-05-08 16:49:22,432 - app.utils.openai_agent - ERROR - Error downloading YouTube video: [0;31mERROR:[0m Postprocessing: ffprobe and ffmpeg not found. Please install or provide the path using --ffmpeg-location
+2025-05-08 16:49:22,433 - app.utils.openai_agent - ERROR - Failed to process video from URL
+2025-05-08 16:49:22,433 - app.routes.generate - ERROR - Error generating from URL: 400: Failed to process the video from URL
+2025-05-08 17:00:34,621 - app.utils.openai_agent - INFO - Starting transcription with Whisper
+2025-05-08 17:00:51,484 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-08 17:00:51,489 - app.utils.openai_agent - INFO - Successfully transcribed media file
+2025-05-08 17:00:51,489 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 17:00:51,489 - app.utils.openai_agent - ERROR - Error extracting text from file: 'str' object has no attribute 'name'
+2025-05-08 17:00:51,489 - app.utils.openai_agent - ERROR - Failed to process transcript
+2025-05-08 17:05:08,300 - app.utils.openai_agent - INFO - Starting transcription with Whisper
+2025-05-08 17:05:25,826 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-08 17:05:25,829 - app.utils.openai_agent - INFO - Successfully transcribed media file
+2025-05-08 17:05:25,830 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 17:05:25,830 - app.utils.openai_agent - ERROR - Error extracting text from file: 'str' object has no attribute 'name'
+2025-05-08 17:05:25,830 - app.utils.openai_agent - ERROR - Failed to process transcript
+2025-05-08 17:09:12,300 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-08 17:09:12,300 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 17:09:12,412 - app.utils.openai_agent - INFO - Starting transcription with Whisper
+2025-05-08 17:09:27,345 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-08 17:09:27,350 - app.utils.openai_agent - INFO - Successfully transcribed media file
+2025-05-08 17:09:27,351 - app.utils.openai_agent - ERROR - Unexpected error in generate_release_notes_async: 'date'
+2025-05-08 17:09:27,351 - app.utils.openai_agent - ERROR - Error processing document: Error generating release notes: 'date'
+2025-05-08 17:09:27,351 - app.routes.upload - ERROR - Error processing media file: Failed to process document: Error generating release notes: 'date'
+2025-05-08 17:09:27,351 - app.routes.upload - ERROR - Error handling media upload: 500: Failed to process media file
+2025-05-08 17:09:27,351 - app.database - ERROR - Database session error: 500: 500: Failed to process media file
+2025-05-08 17:12:43,325 - app.utils.openai_agent - INFO - Starting transcription with Whisper for file: Introducing iPhone 16 Pro \uff5c Apple.mp4
+2025-05-08 17:13:02,563 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-08 17:13:02,564 - app.utils.openai_agent - INFO - Successfully transcribed media file
+2025-05-08 17:13:14,068 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 17:13:14,083 - app.routes.upload - ERROR - Error processing media file: 'filename' is an invalid keyword argument for Release
+2025-05-08 17:13:14,083 - app.database - ERROR - Database session error: 500: Failed to process media file: 'filename' is an invalid keyword argument for Release
+2025-05-08 17:13:44,275 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-08 17:13:44,275 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 17:13:44,408 - app.utils.openai_agent - INFO - Starting transcription with Whisper
+2025-05-08 17:14:01,138 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-08 17:14:01,146 - app.utils.openai_agent - INFO - Successfully transcribed media file
+2025-05-08 17:14:01,146 - app.utils.openai_agent - ERROR - Unexpected error in generate_release_notes_async: 'date'
+2025-05-08 17:14:01,146 - app.utils.openai_agent - ERROR - Error processing document: Error generating release notes: 'date'
+2025-05-08 17:14:01,147 - app.main - ERROR - Error generating release notes: Failed to process document: Error generating release notes: 'date'
+2025-05-08 17:19:22,853 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-08 17:19:22,854 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-08 17:19:23,012 - app.utils.openai_agent - INFO - Starting transcription with Whisper
+2025-05-08 17:19:39,299 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-08 17:19:39,304 - app.utils.openai_agent - INFO - Successfully transcribed media file
+2025-05-08 17:19:39,305 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-08 17:20:04,576 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-08 17:20:04,603 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-09 09:36:56,435 - app.main - ERROR - Error generating release notes: 400: Empty file
+2025-05-09 09:37:37,784 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-09 09:37:37,784 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-09 09:37:37,787 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-09 09:37:54,204 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 09:37:54,249 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-09 09:51:14,237 - app.utils.openai_agent - INFO - Starting transcription with Whisper
+2025-05-09 09:51:30,108 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-09 09:51:30,114 - app.utils.openai_agent - INFO - Successfully transcribed media file
+2025-05-09 09:51:30,906 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-09 09:51:30,906 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-09 09:51:30,907 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-09 09:51:53,705 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 09:51:53,714 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-09 10:09:43,510 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-09 10:09:43,511 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-09 10:09:43,552 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-09 10:10:07,013 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 10:10:07,027 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-09 10:12:22,304 - app.utils.openai_agent - INFO - Starting transcription with Whisper
+2025-05-09 10:12:37,197 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-09 10:12:37,200 - app.utils.openai_agent - INFO - Successfully transcribed media file
+2025-05-09 10:12:37,200 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-09 10:12:37,200 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-09 10:12:37,402 - app.utils.openai_agent - INFO - Starting transcription with Whisper
+2025-05-09 10:12:51,505 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-09 10:12:51,508 - app.utils.openai_agent - INFO - Successfully transcribed media file
+2025-05-09 10:12:51,508 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-09 10:12:51,508 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-09 10:12:58,235 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 10:12:58,238 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-09 10:13:12,881 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 10:13:12,888 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-09 11:15:27,353 - app.utils.openai_agent - ERROR - Error processing document with OpenAI: 'utf-8' codec can't decode byte 0xb5 in position 11: invalid start byte
+2025-05-09 11:15:27,356 - app.main - ERROR - Error generating release notes: Failed to process document: 'utf-8' codec can't decode byte 0xb5 in position 11: invalid start byte
+2025-05-09 11:26:41,515 - app.utils.openai_agent - ERROR - Error processing document with OpenAI: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\Gigab\\AppData\\Local\\Temp\\tmp6c0owcpj.pdf'
+2025-05-09 11:26:41,515 - app.main - ERROR - Error generating release notes: Failed to generate release notes: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\Gigab\\AppData\\Local\\Temp\\tmp6c0owcpj.pdf'
+2025-05-09 11:27:30,463 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 11:27:42,725 - app.utils.openai_agent - ERROR - Error processing document with OpenAI: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\Gigab\\AppData\\Local\\Temp\\tmpr6ug0e3w.pdf'
+2025-05-09 11:27:42,726 - app.main - ERROR - Error generating release notes: Failed to generate release notes: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\Gigab\\AppData\\Local\\Temp\\tmpr6ug0e3w.pdf'
+2025-05-09 11:29:23,154 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 11:29:56,108 - app.utils.openai_agent - ERROR - Error processing document with OpenAI: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\Gigab\\AppData\\Local\\Temp\\tmpak5bzs2e.pdf'
+2025-05-09 11:29:56,109 - app.main - ERROR - Error generating release notes: Failed to generate release notes: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\Gigab\\AppData\\Local\\Temp\\tmpak5bzs2e.pdf'
+2025-05-09 11:38:00,447 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 11:50:23,630 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 11:50:24,191 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-05-09 11:50:24,192 - app.utils.openai_agent - ERROR - Error processing document with OpenAI: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens. However, your messages resulted in 9196 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+2025-05-09 11:50:24,192 - app.main - ERROR - Error generating release notes: Failed to generate release notes: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens. However, your messages resulted in 9196 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+2025-05-09 11:50:45,950 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 11:51:02,044 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 11:51:44,556 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 11:52:00,810 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 12:05:19,578 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 12:05:20,018 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-05-09 12:05:20,019 - app.utils.openai_agent - ERROR - Error processing document with OpenAI: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens. However, your messages resulted in 9222 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+2025-05-09 12:05:20,019 - app.main - ERROR - Error generating release notes: Failed to generate release notes: Error code: 400 - {'error': {'message': "This model's maximum context length is 8192 tokens. However, your messages resulted in 9222 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+2025-05-09 13:45:46,951 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:46:22,124 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:46:49,662 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:47:04,391 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 502 Bad Gateway"
+2025-05-09 13:47:04,391 - openai._base_client - INFO - Retrying request to /chat/completions in 0.462499 seconds
+2025-05-09 13:47:38,640 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:48:11,018 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:48:31,161 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:48:54,219 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:49:18,068 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:49:18,216 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 13:49:18,216 - openai._base_client - INFO - Retrying request to /chat/completions in 1.272000 seconds
+2025-05-09 13:49:44,486 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:49:44,923 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 13:49:44,923 - openai._base_client - INFO - Retrying request to /chat/completions in 1.716000 seconds
+2025-05-09 13:49:56,128 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 502 Bad Gateway"
+2025-05-09 13:49:56,128 - openai._base_client - INFO - Retrying request to /chat/completions in 0.751288 seconds
+2025-05-09 13:49:57,026 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 13:49:57,027 - app.utils.openai_agent - ERROR - Error processing document with OpenAI: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4 in organization org-dQE2Caec8PtGzFDQkMFMWzc8 on tokens per min (TPM): Limit 10000, Used 8269, Requested 3411. Please try again in 10.08s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-05-09 13:49:57,029 - app.main - ERROR - Error generating release notes: Failed to generate release notes: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4 in organization org-dQE2Caec8PtGzFDQkMFMWzc8 on tokens per min (TPM): Limit 10000, Used 8269, Requested 3411. Please try again in 10.08s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-05-09 13:49:57,732 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:49:58,125 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 13:49:58,126 - openai._base_client - INFO - Retrying request to /chat/completions in 11.418000 seconds
+2025-05-09 13:50:56,333 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:51:29,170 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 502 Bad Gateway"
+2025-05-09 13:51:29,170 - openai._base_client - INFO - Retrying request to /chat/completions in 0.404907 seconds
+2025-05-09 13:53:10,122 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:53:30,469 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:53:42,968 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:54:02,967 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:54:10,402 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:54:24,796 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:54:27,668 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:55:13,482 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:55:48,887 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:56:06,000 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 13:57:25,562 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:21:37,242 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:22:00,962 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:22:33,459 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:22:34,841 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 14:22:34,841 - openai._base_client - INFO - Retrying request to /chat/completions in 0.428717 seconds
+2025-05-09 14:22:36,673 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 14:22:36,674 - openai._base_client - INFO - Retrying request to /chat/completions in 0.888122 seconds
+2025-05-09 14:22:37,806 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 14:22:37,807 - app.utils.openai_agent - ERROR - Error processing document with OpenAI: Error code: 429 - {'error': {'message': 'Request too large for gpt-4 in organization org-dQE2Caec8PtGzFDQkMFMWzc8 on tokens per min (TPM): Limit 10000, Requested 39773. The input or output tokens must be reduced in order to run successfully. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-05-09 14:22:37,807 - app.main - ERROR - Error generating release notes: Failed to generate release notes: Error code: 429 - {'error': {'message': 'Request too large for gpt-4 in organization org-dQE2Caec8PtGzFDQkMFMWzc8 on tokens per min (TPM): Limit 10000, Requested 39773. The input or output tokens must be reduced in order to run successfully. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-05-09 14:23:23,950 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:23:49,890 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:24:31,730 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:24:49,835 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:24:51,905 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:25:20,849 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:25:59,794 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:26:20,562 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:26:22,236 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:26:43,894 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:28:19,415 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:28:40,034 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:33:31,086 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:33:52,695 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:36:53,947 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:37:15,344 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:39:16,185 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:39:37,322 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:44:11,524 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:44:38,554 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:46:43,126 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:47:18,060 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:51:54,335 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:52:17,244 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:55:45,914 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 14:56:06,599 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:13:54,404 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:13:58,576 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 15:13:58,577 - openai._base_client - INFO - Retrying request to /chat/completions in 0.460327 seconds
+2025-05-09 15:13:59,288 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 15:13:59,288 - openai._base_client - INFO - Retrying request to /chat/completions in 0.842757 seconds
+2025-05-09 15:14:01,661 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 15:14:01,662 - app.utils.openai_agent - ERROR - Error processing document with OpenAI: Error code: 429 - {'error': {'message': 'Request too large for gpt-4 in organization org-dQE2Caec8PtGzFDQkMFMWzc8 on tokens per min (TPM): Limit 10000, Requested 18161. The input or output tokens must be reduced in order to run successfully. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-05-09 15:14:01,662 - app.main - ERROR - Error generating release notes: Failed to generate release notes: Error code: 429 - {'error': {'message': 'Request too large for gpt-4 in organization org-dQE2Caec8PtGzFDQkMFMWzc8 on tokens per min (TPM): Limit 10000, Requested 18161. The input or output tokens must be reduced in order to run successfully. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-05-09 15:16:53,032 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:16:56,498 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 15:16:56,499 - openai._base_client - INFO - Retrying request to /chat/completions in 0.497137 seconds
+2025-05-09 15:16:58,430 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 15:16:58,430 - openai._base_client - INFO - Retrying request to /chat/completions in 0.949443 seconds
+2025-05-09 15:16:59,635 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-09 15:16:59,636 - app.utils.openai_agent - ERROR - Error processing document with OpenAI: Error code: 429 - {'error': {'message': 'Request too large for gpt-4 in organization org-dQE2Caec8PtGzFDQkMFMWzc8 on tokens per min (TPM): Limit 10000, Requested 18161. The input or output tokens must be reduced in order to run successfully. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-05-09 15:16:59,636 - app.main - ERROR - Error generating release notes: Failed to generate release notes: Error code: 429 - {'error': {'message': 'Request too large for gpt-4 in organization org-dQE2Caec8PtGzFDQkMFMWzc8 on tokens per min (TPM): Limit 10000, Requested 18161. The input or output tokens must be reduced in order to run successfully. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-05-09 15:21:05,645 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:21:18,951 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:21:19,720 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:21:31,109 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:21:32,220 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:21:44,245 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:21:46,033 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:21:57,609 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:21:58,641 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:22:08,102 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:22:09,458 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:22:18,526 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:22:19,321 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:22:30,601 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:22:32,771 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:22:43,470 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:22:44,099 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:22:56,940 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:22:58,864 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:23:11,347 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:23:13,848 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:23:28,679 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:23:30,789 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:23:38,740 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:23:40,105 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:23:48,104 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:23:49,391 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:23:57,897 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:23:58,677 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:05,973 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:06,785 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:15,834 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:17,175 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:26,177 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:28,582 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:37,119 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:37,926 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:47,447 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:48,314 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:58,790 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:24:59,711 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:25:09,011 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:25:13,040 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:25:22,639 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:25:23,468 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:25:35,436 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:25:36,257 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:25:45,025 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:25:47,334 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:25:56,907 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:25:58,144 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:26:07,702 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:26:09,974 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:26:18,153 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:26:19,033 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:26:47,473 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:27:03,118 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:27:04,047 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:27:17,593 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:27:18,771 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:27:30,806 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:27:31,832 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:27:43,134 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:27:44,117 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:27:59,773 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:28:00,576 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:28:14,338 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:28:15,414 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:28:32,529 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:28:33,410 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:28:41,305 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:28:42,316 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:28:55,882 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:28:57,762 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:06,833 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:08,142 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:17,135 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:18,032 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:24,957 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:25,939 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:33,395 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:34,758 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:42,689 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:44,564 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:51,269 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:29:52,396 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:30:00,644 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:30:01,417 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:30:09,786 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:30:10,795 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:30:22,347 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:30:23,219 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:30:35,912 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:30:37,217 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:30:45,595 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:30:46,328 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:32:04,708 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:32:28,727 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:48:51,367 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:49:04,844 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:49:05,867 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:49:17,322 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:49:19,935 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:49:33,951 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:49:35,925 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:49:49,111 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:49:49,946 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:00,183 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:00,862 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:09,706 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:10,467 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:19,230 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:20,252 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:31,621 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:33,760 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:44,042 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:45,936 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:57,221 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:50:58,551 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:51:10,201 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:51:12,067 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:51:24,489 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:51:25,586 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:51:37,630 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:51:38,537 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:51:46,870 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:51:47,543 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:51:57,322 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:51:59,477 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:52:10,134 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:52:11,177 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:52:20,140 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:52:22,342 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:52:32,492 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:52:33,246 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:52:45,183 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:52:47,151 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:53:01,303 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:53:02,150 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:53:11,929 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:53:12,947 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:53:23,235 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:53:24,314 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:53:34,451 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:53:35,590 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:53:46,294 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:53:47,278 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:53:59,190 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:54:00,442 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:54:12,847 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:54:14,020 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:54:27,493 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:54:28,874 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:54:40,093 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:54:42,311 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:54:54,039 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:54:54,907 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:55:05,104 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:55:06,051 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:55:19,550 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:55:20,423 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:55:29,064 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:55:29,965 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:55:45,793 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:55:47,013 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:56:00,315 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:56:02,981 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:56:15,300 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:56:17,043 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:56:27,818 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:56:29,330 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:56:42,617 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:56:43,590 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:56:57,476 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:56:59,353 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:57:21,926 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:57:31,574 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:57:33,318 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:57:47,674 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:57:48,531 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:57:55,461 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:57:56,029 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:58:06,547 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:58:07,219 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:58:18,280 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:58:19,641 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:58:33,249 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:58:34,156 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:58:46,100 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:58:47,005 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:58:56,847 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:58:57,690 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:59:12,122 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 15:59:12,973 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 16:01:55,088 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 16:02:31,695 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 16:11:05,168 - app.utils.file_processor - ERROR - Error processing video transcript: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-09 16:30:50,200 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-09 16:30:59,330 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 16:31:32,630 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-09 16:31:45,219 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 16:46:18,639 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-09 16:46:29,473 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-09 17:00:33,997 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-09 17:00:43,353 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 10:33:36,065 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-12 10:33:36,065 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-12 10:33:36,065 - app.utils.openai_agent - ERROR - Error extracting text from file: '_io.BytesIO' object has no attribute 'name'
+2025-05-12 10:33:36,065 - app.utils.openai_agent - ERROR - Failed to process transcript
+2025-05-12 10:33:36,065 - app.routes.generate - ERROR - Error generating release notes: Failed to generate release notes: Failed to process the transcript file
+2025-05-12 10:33:36,066 - app.database - ERROR - Database session error: 500: Failed to generate release notes: Failed to process the transcript file
+2025-05-12 10:36:47,725 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-12 10:36:47,725 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-12 10:36:47,725 - app.utils.openai_agent - ERROR - Error extracting text from file: '_io.BytesIO' object has no attribute 'name'
+2025-05-12 10:36:47,725 - app.utils.openai_agent - ERROR - Failed to process transcript
+2025-05-12 10:36:47,725 - app.routes.generate - ERROR - Error generating release notes: Failed to generate release notes: Failed to process the transcript file
+2025-05-12 10:36:47,725 - app.database - ERROR - Database session error: 500: Failed to generate release notes: Failed to process the transcript file
+2025-05-12 10:43:31,808 - app.routes.generate - INFO - Starting to process file: Consignes du Rapport Stratégique FR 24-25 (2).pdf
+2025-05-12 10:43:31,808 - app.routes.generate - INFO - File size: 0.29MB
+2025-05-12 10:43:31,808 - app.routes.generate - INFO - File extension: pdf
+2025-05-12 10:43:31,808 - app.routes.generate - INFO - Creating memory copy of file
+2025-05-12 10:43:31,808 - app.routes.generate - INFO - Initializing OpenAI agent
+2025-05-12 10:43:32,422 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-12 10:43:32,422 - app.routes.generate - INFO - Calling OpenAI agent to generate release notes
+2025-05-12 10:43:32,422 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-12 10:43:32,422 - app.utils.openai_agent - ERROR - Error extracting text from file: '_io.BytesIO' object has no attribute 'name'
+Traceback (most recent call last):
+  File "C:\Users\Gigab\Desktop\fastapi-release-notes-mvp\app\utils\openai_agent.py", line 415, in extract_text_from_memory
+    file_ext = file_obj.name.lower().split('.')[-1]
+               ^^^^^^^^^^^^^
+AttributeError: '_io.BytesIO' object has no attribute 'name'
+2025-05-12 10:43:32,424 - app.utils.openai_agent - ERROR - Failed to process transcript
+2025-05-12 10:43:32,424 - app.routes.generate - ERROR - OpenAI agent failed to generate release notes: Failed to process the transcript file
+2025-05-12 10:43:32,424 - app.routes.generate - ERROR - HTTP error generating release notes: Failed to generate release notes: Failed to process the transcript file
+2025-05-12 10:43:32,424 - app.database - ERROR - Database session error: 500: Failed to generate release notes: Failed to process the transcript file
+2025-05-12 10:51:17,162 - app.routes.generate - INFO - Starting to process file: Consignes du Rapport Stratégique FR 24-25 (2).pdf
+2025-05-12 10:51:17,162 - app.routes.generate - INFO - File size: 0.29MB
+2025-05-12 10:51:17,162 - app.routes.generate - INFO - File extension: pdf
+2025-05-12 10:51:17,162 - app.routes.generate - INFO - Creating memory copy of file
+2025-05-12 10:51:17,162 - app.routes.generate - INFO - Initializing OpenAI agent
+2025-05-12 10:51:17,782 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-12 10:51:17,782 - app.routes.generate - INFO - Calling OpenAI agent to generate release notes
+2025-05-12 10:51:17,782 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-12 10:51:17,783 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-05-12 10:51:17,783 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-05-12 10:51:17,783 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-05-12 10:51:17,800 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-05-12 10:51:17,906 - app.utils.openai_agent - INFO - Successfully extracted 4092 characters from PDF
+2025-05-12 10:51:17,907 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-12 10:51:37,256 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 10:51:37,276 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-12 10:51:37,277 - app.routes.generate - INFO - Successfully generated release notes
+2025-05-12 10:52:18,969 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-12 10:52:25,114 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 11:06:05,734 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-12 11:06:16,741 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 11:07:28,728 - app.routes.generate - INFO - Starting to process file: Consignes du Rapport Stratégique FR 24-25 (2).pdf
+2025-05-12 11:07:28,728 - app.routes.generate - INFO - File size: 0.29MB
+2025-05-12 11:07:28,728 - app.routes.generate - INFO - File extension: pdf
+2025-05-12 11:07:28,728 - app.routes.generate - INFO - Creating memory copy of file
+2025-05-12 11:07:28,728 - app.routes.generate - INFO - Initializing OpenAI agent
+2025-05-12 11:07:29,347 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-12 11:07:29,348 - app.routes.generate - INFO - Calling OpenAI agent to generate release notes
+2025-05-12 11:07:29,348 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-12 11:07:29,348 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-05-12 11:07:29,348 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-05-12 11:07:29,348 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-05-12 11:07:29,348 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-05-12 11:07:29,356 - app.utils.openai_agent - INFO - Successfully extracted 4092 characters from PDF
+2025-05-12 11:07:29,356 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously
+2025-05-12 11:07:53,754 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 11:07:53,755 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-12 11:07:53,756 - app.routes.generate - INFO - Successfully generated release notes
+2025-05-12 11:22:35,534 - app.routes.generate - INFO - Starting to process file: Consignes du Rapport Stratégique FR 24-25 (2).pdf
+2025-05-12 11:22:35,534 - app.routes.generate - INFO - File size: 0.29MB
+2025-05-12 11:22:35,534 - app.routes.generate - INFO - File extension: pdf
+2025-05-12 11:22:35,534 - app.routes.generate - INFO - Creating memory copy of file
+2025-05-12 11:22:35,535 - app.routes.generate - INFO - Initializing OpenAI agent
+2025-05-12 11:22:36,152 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-12 11:22:36,152 - app.routes.generate - INFO - Calling OpenAI agent to generate release notes
+2025-05-12 11:22:36,152 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-12 11:22:36,152 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-05-12 11:22:36,152 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-05-12 11:22:36,152 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-05-12 11:22:36,152 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-05-12 11:22:36,160 - app.utils.openai_agent - INFO - Successfully extracted 4092 characters from PDF
+2025-05-12 11:22:36,161 - app.utils.openai_agent - INFO - Detecting content language
+2025-05-12 11:22:36,822 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 11:22:36,828 - app.utils.openai_agent - INFO - Detected language: fr
+2025-05-12 11:22:36,828 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: fr
+2025-05-12 11:22:58,006 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 11:22:58,007 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-12 11:22:58,007 - app.routes.generate - INFO - Successfully generated release notes
+2025-05-12 11:23:58,404 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-12 11:24:07,077 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 11:33:33,801 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-05-12 11:33:34,389 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-12 11:33:34,389 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-12 11:33:34,389 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-05-12 11:33:34,389 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-05-12 11:33:34,389 - app.utils.openai_agent - INFO - Detecting content language
+2025-05-12 11:33:34,908 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 11:33:34,910 - app.utils.openai_agent - INFO - Detected language: en
+2025-05-12 11:33:34,910 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
+2025-05-12 11:33:49,957 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 11:33:49,959 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-12 11:47:31,042 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
+2025-05-12 11:47:31,042 - app.routes.generate - INFO - File size: 0.10MB
+2025-05-12 11:47:31,042 - app.routes.generate - INFO - File extension: pdf
+2025-05-12 11:47:31,042 - app.routes.generate - INFO - Creating memory copy of file
+2025-05-12 11:47:31,042 - app.routes.generate - INFO - Initializing OpenAI agent
+2025-05-12 11:47:31,638 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-12 11:47:31,638 - app.routes.generate - INFO - Calling OpenAI agent to generate release notes
+2025-05-12 11:47:31,638 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-12 11:47:31,638 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-05-12 11:47:31,638 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-05-12 11:47:31,638 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-05-12 11:47:31,640 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-05-12 11:47:31,646 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
+2025-05-12 11:47:31,646 - app.utils.openai_agent - INFO - Detecting content language
+2025-05-12 11:47:32,192 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 11:47:32,195 - app.utils.openai_agent - INFO - Detected language: en
+2025-05-12 11:47:32,195 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
+2025-05-12 11:47:46,861 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-12 11:47:46,867 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-12 11:47:46,868 - app.routes.generate - INFO - Successfully generated release notes

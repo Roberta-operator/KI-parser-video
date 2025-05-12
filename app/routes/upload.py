@@ -1,48 +1,71 @@
-from fastapi import APIRouter, UploadFile, File, HTTPException
-import logging
-import magic
+from fastapi import APIRouter, UploadFile, HTTPException
+from fastapi.responses import JSONResponse
+from typing import Dict
 import io
+import logging
+from ..utils.file_processor import (
+    validate_file_with_streaming,
+    validate_video_format,
+    save_temp_video,
+    process_video_for_transcript,
+    cleanup_temp_video
+)
+from ..utils.openai_agent import OpenAIAgent
 
 logger = logging.getLogger(__name__)
-
 router = APIRouter()
 
-MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB
-ALLOWED_MIME_TYPES = {
-    'application/pdf': '.pdf',
-    'text/plain': '.txt',
-    'application/json': '.json'
-}
+@router.post("/upload-video")
+async def upload_video(file: UploadFile) -> Dict:
+    """
+    Handle video upload, transcription, and release notes generation
+    """
+    # Validate video format
+    is_valid_format, format_error = validate_video_format(file.filename)
+    if not is_valid_format:
+        raise HTTPException(status_code=400, detail=format_error)
 
-@router.post("/upload/")
-async def upload_file(file: UploadFile = File(...)):
+    # Read file into memory for validation
+    file_content = await file.read()
+    file_stream = io.BytesIO(file_content)
+
+    # Validate file size
+    is_valid_size, size_error = await validate_file_with_streaming(file_stream)
+    if not is_valid_size:
+        raise HTTPException(status_code=400, detail=size_error)
+
     try:
-        # Check file size
-        file.file.seek(0, 2)  # Seek to end
-        size = file.file.tell()
-        file.file.seek(0)  # Reset position
+        # Save video temporarily
+        success, file_path = await save_temp_video(file_stream, file.filename)
+        if not success:
+            raise HTTPException(status_code=500, detail=file_path)
+
+        # Get transcript from video
+        success, transcript = await process_video_for_transcript(file_path)
+        if not success:
+            raise HTTPException(status_code=500, detail=transcript)
+
+        # Generate release notes from transcript using OpenAIAgent for consistency
+        openai_agent = OpenAIAgent()
+        success, release_notes = await openai_agent.generate_release_notes_async(
+            io.BytesIO(transcript.encode()),
+            "transcript.txt"
+        )
         
-        if size > MAX_FILE_SIZE:
-            raise HTTPException(status_code=400, detail="File too large")
-            
-        # Read file content
-        content = await file.read()
-        
-        # Check MIME type
-        mime_type = magic.from_buffer(content, mime=True)
-        if (mime_type not in ALLOWED_MIME_TYPES):
-            raise HTTPException(
-                status_code=400, 
-                detail="Invalid file type. Allowed types: PDF, TXT, JSON"
-            )
-            
-        # Create a BytesIO object to pass to the OpenAI agent
-        file_obj = io.BytesIO(content)
-        file_obj.name = file.filename  # Add name attribute for file type detection
-            
-        logger.info(f"File validated successfully: {file.filename}")
-        return {"filename": file.filename, "file_obj": file_obj}
-        
+        if not success:
+            raise HTTPException(status_code=500, detail=release_notes)
+
+        # Cleanup temporary file
+        await cleanup_temp_video(file_path)
+
+        return {
+            "message": "Video processed successfully",
+            "transcript": transcript,
+            "release_notes": release_notes
+        }
+
     except Exception as e:
-        logger.error(f"Error processing file: {str(e)}")
+        # Ensure cleanup in case of any error
+        if 'file_path' in locals():
+            await cleanup_temp_video(file_path)
         raise HTTPException(status_code=500, detail=str(e))

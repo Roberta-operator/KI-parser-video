@@ -1,16 +1,19 @@
 # Release Notes Generator
 
-An AI-powered release notes generator built with FastAPI and Streamlit that helps teams create consistent, well-structured release notes from various input formats.
+An AI-powered release notes generator built with FastAPI and Streamlit that helps teams create consistent, well-structured release notes from various input formats like documents and videos.
 
 ## Key Features
 
 - 🚀 AI-Powered Generation with OpenAI GPT-4
-- 📄 Support for PDF, TXT, and JSON inputs
-- 🔒 Secure user authentication system
+- 📄 Support for PDF, TXT, and JSON document inputs
+- 🎥 Video transcription and processing with Whisper AI
+- 🌐 Multi-language support with automatic detection
+- 🔒 Secure user authentication system with bcrypt
 - 📝 Template-based generation for consistency
 - 📊 History tracking for all generations
-- ⚡ Rate-limited API protection
+- ⚡ Rate-limited API protection (10/minute)
 - 💾 PostgreSQL database backend
+- 📥 Export to PDF and TXT formats
 
 ## Setup
 
@@ -22,9 +25,9 @@ pip install -r requirements.txt
 ```
 
 2. **Configuration**
-- Create `.env` file with your OpenAI API key:
+Create `.env` file with your API key:
 ```
-OPENAI_API_KEY=your_key_here
+OPENAI_API_KEY=your_openai_key_here
 ```
 
 3. **Database Setup**
@@ -51,16 +54,38 @@ streamlit run app/streamlit.py
 
 2. **Generate Release Notes**
 - Login or create an account
-- Upload a file (PDF/TXT/JSON, max 10MB)
-- Click "Generate Release Notes"
-- View and save the AI-generated release notes
+- Upload your file:
+  - Documents: PDF, TXT, JSON (max 10MB)
+  - Media: MP4, MPEG, M4V, MOV, AVI, WMV (max 100MB)
+- Click "Generate Notes"
+- View, download as PDF, or save as TXT
+- For video files, you can also view the full transcript
+
+3. **Language Support**
+Automatic language detection and generation in:
+- English (en)
+- French (fr)
+- German (de)
+- Spanish (es)
+- Italian (it)
+- Portuguese (pt)
+- Dutch (nl)
+- Polish (pl)
 
 ## Security Features
 
-- Bcrypt password hashing with strong password requirements
-- Rate limiting (30 requests/minute)
-- File validation and secure processing
-- SQL injection protection via SQLAlchemy
+- 🔐 Bcrypt password hashing with strong requirements:
+  - Minimum 8 characters
+  - Uppercase and lowercase letters
+  - Numbers
+  - Special characters
+- ⚡ Rate limiting (10 requests/minute)
+- 📝 File validation and secure processing:
+  - Size limits (10MB for documents, 100MB for videos)
+  - File type validation
+  - Secure file handling with memory buffering
+- 🛡️ SQL injection protection via SQLAlchemy
+- 🌐 CORS and trusted host middleware
 
 ## Project Structure
 
@@ -68,36 +93,50 @@ streamlit run app/streamlit.py
 fastapi-release-notes-mvp/
 ├── app/
 │   ├── routes/
-│   │   ├── generate.py    # Release notes generation endpoints
-│   │   ├── upload.py      # File upload handling & validation
-│   │   └── users.py       # User registration, login & history endpoints
+│   │   ├── generate.py    # Release notes generation endpoint
+│   │   ├── upload.py      # Video upload and processing
+│   │   └── users.py       # User auth & history tracking
 │   ├── utils/
-│   │   └── openai_agent.py # OpenAI integration & template processing
-│   ├── auth.py            # Authentication & password security
-│   ├── database.py        # PostgreSQL configuration & models
-│   ├── main.py           # FastAPI app setup & middleware
-│   ├── models.py         # Pydantic data validation models
-│   └── streamlit.py      # Frontend UI implementation
+│   │   ├── openai_agent.py  # OpenAI & template processing
+│   │   └── file_processor.py # File handling & validation
+│   ├── auth.py            # Authentication & security
+│   ├── database.py        # PostgreSQL models & config
+│   ├── main.py           # FastAPI & middleware setup
+│   ├── models.py         # Data validation models
+│   └── streamlit.py      # Frontend interface
 ├── data/
-│   └── template.pdf      # Reference template for release notes
-├── .env                  # Environment variables (OpenAI API key)
-├── app.log              # Application logging
-├── requirements.txt     # Python dependencies
-└── README.md           # Project documentation
+│   └── template.pdf      # Release notes template
+├── temp_videos/         # Temporary video storage
+├── .env                 # OpenAI API key
+├── app.log             # Application logs
+├── requirements.txt    # Python dependencies
+└── README.md          # Documentation
 ```
 
-Each file serves a specific purpose:
-- `routes/*.py`: API endpoint implementations
-  - `generate.py`: Handles release notes generation requests
-  - `upload.py`: Manages file uploads with type & size validation
-  - `users.py`: User management and history tracking
-- `utils/openai_agent.py`: Core AI functionality with template-based generation
-- `auth.py`: Secure authentication with bcrypt and password validation
-- `database.py`: Database models and connection management
-- `main.py`: Application configuration, CORS, and rate limiting
-- `models.py`: Request/response data validation
-- `streamlit.py`: Interactive web interface
-- `template.pdf`: Master template for consistent release notes formatting
+The application is divided into four main components:
+
+1. **Frontend (Streamlit)**
+   - User-friendly interface with drag-and-drop uploads
+   - Real-time processing status and progress tracking
+   - PDF and TXT export options
+   - Video transcript viewing
+
+2. **Backend (FastAPI)**
+   - Secure REST API endpoints
+   - Rate limiting and error handling
+   - Middleware for security and monitoring
+   - Background task processing
+
+3. **AI Processing**
+   - OpenAI GPT-4 for release notes generation
+   - Whisper AI for video transcription
+   - Automatic language detection and support
+   - Template-based output formatting
+
+4. **Data Storage**
+   - PostgreSQL for user data and history
+   - Secure file handling with memory buffering
+   - Temporary storage for video processing
 
 
 
