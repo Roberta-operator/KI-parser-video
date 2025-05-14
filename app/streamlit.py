@@ -21,35 +21,158 @@ MAX_FILE_SIZE_MB = {
 st.set_page_config(
     page_title="Release Notes Generator",
     page_icon="📝",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="collapsed"  # Hide sidebar by default
 )
 
-# Add custom CSS to center content
-st.markdown(
-    """
-    <style>
-    .main-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 1rem;
-        text-align: center;
-    }
-    .stButton > button {
-        display: block !important;
-        margin: 0 auto !important;
-    }
-    .centered-text {
-        text-align: center !important;
-    }
-    .release-notes-container {
-        width: 80%;
-        margin: 0 auto;
-        text-align: center;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# Add custom CSS
+st.markdown("""
+<style>
+/* Reset and container styling */
+.block-container {
+    padding: 2rem !important;
+    max-width: none !important;
+}
+.element-container {
+    width: 800px !important;
+    margin: 0 !important;
+}
+div[data-testid="column"] {
+    width: fit-content !important;
+    flex: none !important;
+}
+div[data-testid="stVerticalBlock"] > div {
+    width: 800px !important;
+    margin-left: 0 !important;
+}
+
+/* Upload button styling */
+.stUploadButton > div {
+    width: 800px !important;
+}
+.stUploadButton button {
+    width: 100% !important;
+}
+
+/* Generate button styling */
+.stButton > button {
+    background-color: #2E86C1 !important;
+    color: white !important;
+    border-radius: 10px !important;
+    padding: 0.5rem 2rem !important;
+    font-weight: bold !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+    width: 300px !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+.stButton > button:hover {
+    background-color: #1A5276 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress bar */
+.stProgress > div {
+    width: 800px !important;
+    margin-left: 0 !important;
+}
+.stProgress > div > div {
+    background-color: #2ECC71 !important;
+}
+
+/* Stats box */
+.metrics-container, .stats-box {
+    background: linear-gradient(135deg, #1A5276 0%, #2E86C1 100%) !important;
+    width: 800px !important;
+    padding: 1.5rem !important;
+    border-radius: 10px !important;
+    color: white !important;
+    margin: 1rem 0 !important;
+}
+.metrics-title, .stats-title {
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+}
+.metrics-value, .stats-value {
+    color: #7DCEA0 !important;
+    font-size: 1.1rem !important;
+}
+
+/* Content container */
+.content-container {
+    width: 800px !important;
+    background: white !important;
+    padding: 2rem !important;
+    border-radius: 10px !important;
+    margin: 1rem 0 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Release notes */
+.release-notes {
+    width: 100% !important;
+    margin: 0 !important;
+    line-height: 1.8 !important;
+    color: #2C3E50 !important;
+    font-size: 1.1rem !important;
+}
+.release-notes h1, .release-notes h2, .release-notes h3 {
+    color: #2E86C1 !important;
+    margin: 1.5em 0 0.8em !important;
+    font-weight: bold !important;
+    font-size: 1.3rem !important;
+}
+.release-notes ul, .release-notes ol {
+    margin-left: 2em !important;
+    margin-bottom: 1.5em !important;
+    color: #2C3E50 !important;
+}
+.release-notes p {
+    margin-bottom: 1.2em !important;
+    color: #2C3E50 !important;
+}
+.release-notes em {
+    color: #27AE60 !important;
+    font-weight: 500 !important;
+}
+.release-notes li {
+    margin-bottom: 0.5em !important;
+    color: #2C3E50 !important;
+}
+.release-notes strong {
+    color: #2C3E50 !important;
+    font-weight: bold !important;
+    display: block !important;
+    margin-top: 1.2em !important;
+}
+
+/* Download section */
+.download-section {
+    width: 800px !important;
+    display: flex !important;
+    gap: 1rem !important;
+    margin: 2rem 0 !important;
+    justify-content: flex-start !important;
+}
+.download-section .stButton > button {
+    width: auto !important;
+    display: inline-block !important;
+}
+
+/* Success/Error messages */
+.stSuccess, .stError {
+    width: 800px !important;
+    margin-left: 0 !important;
+}
+
+/* Tabs */
+div[data-testid="stHorizontalBlock"] {
+    width: 800px !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # Configure requests session with retry logic
 def create_requests_session():
@@ -101,87 +224,75 @@ def handle_api_request(method, endpoint, **kwargs):
 def display_release_notes(response):
     """Display the generated release notes and download buttons"""
     with st.container():
-        # Add some vertical spacing before the content
-        st.markdown("<br>", unsafe_allow_html=True)
-        
-        # Create a container with proper styling
-        st.markdown(
-            """
-            <style>
-            .release-notes {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 20px;
-                line-height: 1.6;
-            }
-            .release-notes h1, .release-notes h2, .release-notes h3 {
-                text-align: center;
-                margin: 1.5em 0 1em 0;
-            }
-            .release-notes ul, .release-notes ol {
-                margin-left: 2em;
-                margin-bottom: 1em;
-            }
-            .release-notes p {
-                margin-bottom: 1em;
-            }
-            .release-notes em {
-                color: #666;
-            }
-            .download-section {
-                text-align: center;
-                margin-top: 2em;
-            }
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
-        
-        # Format the content for better markdown rendering
+        # Display metrics in a container
+        if "token_usage" in response:
+            token_count = response["token_usage"]
+            cost = token_count * 0.00003  # Using the correct GPT-4-turbo-preview price
+            st.markdown(
+                f"""
+                <div style="width: 800px; background: #1e3d59; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                    <div style="font-size: 1.2em; color: white; margin-bottom: 10px;">📊 Generation Statistics</div>
+                    <div style="color: #7DCEA0; font-size: 1.1em;">
+                        Total Tokens: {token_count:,} tokens<br>
+                        Estimated Cost: ${cost:.4f} (Using GPT-4-turbo-preview)
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )    # Create main container
+    with st.container():
+
+        # Display the release notes
         generated_text = response["content"]
         
-        # Process the markdown content
-        formatted_text = "<div class='release-notes'>"
+        # Format the content
+        formatted_text = []
         current_list = []
         in_list = False
         
         for line in generated_text.split('\n'):
             line = line.strip()
             if line:
-                # Handle headers
                 if line.startswith('**') and line.endswith('**'):
                     if in_list:
-                        formatted_text += "<ul>" + "\n".join(current_list) + "</ul>"
+                        formatted_text.append("<ul>" + "\n".join(current_list) + "</ul>")
                         current_list = []
                         in_list = False
-                    line = f"<h2>{line.strip('**')}</h2>"
-                # Handle bullet points
+                    # Just remove the ** markers and treat as normal text
+                    text = line.strip('**')
+                    formatted_text.append(f"<p>{text}</p>")
                 elif line.startswith('- '):
                     in_list = True
                     current_list.append(f"<li>{line[2:]}</li>")
-                    continue
-                # Handle emphasized text
                 elif line.startswith('*') and line.endswith('*'):
-                    line = f"<em>{line.strip('*')}</em>"
-                else:
                     if in_list:
-                        formatted_text += "<ul>" + "\n".join(current_list) + "</ul>"
+                        formatted_text.append("<ul>" + "\n".join(current_list) + "</ul>")
                         current_list = []
                         in_list = False
-                    line = f"<p>{line}</p>"
-                
-                formatted_text += line + "\n"
+                    formatted_text.append(f"<p><em>{line.strip('*')}</em></p>")
+                else:
+                    if in_list:
+                        formatted_text.append("<ul>" + "\n".join(current_list) + "</ul>")
+                        current_list = []
+                        in_list = False
+                    formatted_text.append(f"<p>{line}</p>")
         
-        # Add any remaining list items
         if current_list:
-            formatted_text += "<ul>" + "\n".join(current_list) + "</ul>"
-        
-        formatted_text += "</div>"
+            formatted_text.append("<ul>" + "\n".join(current_list) + "</ul>")
         
         # Display the formatted content
-        st.markdown(formatted_text, unsafe_allow_html=True)
-        
-        # Add download buttons section
+        st.markdown(
+            f"""
+            <div class="content-container">
+                <div class="release-notes">
+                    {"".join(formatted_text)}
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        # Add download buttons in a separate container
         st.markdown("<div class='download-section'>", unsafe_allow_html=True)
         col1, col2 = st.columns(2)
         
@@ -196,8 +307,6 @@ def display_release_notes(response):
                 
                 # Create PDF buffer
                 pdf_buffer = BytesIO()
-                
-                # Create the PDF document
                 doc = SimpleDocTemplate(
                     pdf_buffer,
                     pagesize=A4,
@@ -207,37 +316,21 @@ def display_release_notes(response):
                     bottomMargin=72
                 )
                 
-                # Create styles
                 styles = getSampleStyleSheet()
-                title_style = styles['Title']
-                normal_style = styles['Normal']
+                story = [
+                    Paragraph("Release Notes", styles['Title']),
+                    Spacer(1, 12)
+                ]
                 
-                # Prepare the story (content)
-                story = []
-                
-                # Add title
-                story.append(Paragraph("Release Notes", title_style))
-                story.append(Spacer(1, 12))
-                
-                # Process and add content with proper spacing
                 for line in generated_text.split('\n'):
-                    if line.strip():  # Skip empty lines
-                        # Check if line is a header
-                        if line.startswith('#') or line.startswith('Point'):
-                            style = styles['Heading1']
-                            # Add extra spacing before headers
-                            story.append(Spacer(1, 12))
-                        else:
-                            style = normal_style
-                        
+                    if line.strip():
+                        style = styles['Heading1'] if line.startswith('#') or line.startswith('Point') else styles['Normal']
                         story.append(Paragraph(line, style))
                         story.append(Spacer(1, 6))
                 
-                # Build the PDF
                 doc.build(story)
                 pdf_buffer.seek(0)
                 
-                # Offer download with custom styling
                 st.download_button(
                     label="Download as PDF",
                     data=pdf_buffer,
@@ -279,22 +372,23 @@ def display_processing_status(total_files: int):
     """Create and return enhanced progress tracking elements"""
     # Create a container for all progress elements
     progress_container = st.container()
+    
     with progress_container:
-        # Add a processing header
-        st.markdown("#### 🔄 Processing Status")
+        # Style for status box
+        st.markdown("""
+        <div style="width: 800px; margin-bottom: 20px;">
+            <h4 style="margin-bottom: 10px;">🔄 Processing Status</h4>
+        </div>
+        """, unsafe_allow_html=True)
         
-        # Create columns for different status elements
-        col1, col2 = st.columns(2)
+        # Progress bar
+        progress_bar = st.progress(0)
         
-        with col1:
-            progress_bar = st.progress(0)
-            status_text = st.empty()
+        # Status text
+        status_text = st.empty()
         
-        with col2:
-            # Create metrics container
-            metrics_container = st.container()
-            with metrics_container:
-                time_remaining = st.empty()
+        # Time remaining
+        time_remaining = st.empty()
     
     return progress_bar, status_text, time_remaining
 
@@ -319,11 +413,10 @@ def estimate_remaining_time(start_time: float, current_file: int, total_files: i
 
 def main():
     # Main header with description
-    st.title("📝 Release Notes Generator")
     st.markdown("""
-    ### Transform your documents and videos into professional release notes
-    Upload your files below and let AI help you generate clear, organized release notes.
-    """)
+    <h1 style='margin-bottom: 1rem; font-size: 2.5em;'>📝 Release Notes Generator</h1>
+    <h3 style='margin-bottom: 2rem; color: #666; font-weight: normal;'>Transform your documents and videos into professional release notes</h3>
+    """, unsafe_allow_html=True)
     
     # Create a container for file upload sections
     with st.container():
@@ -386,6 +479,7 @@ def main():
                                             status_text.text("Processing complete!")
                                             time_remaining.text(f"Total time: {int(time.time() - start_time)}s")
                                             st.success(f"✅ Successfully processed {doc_file.name}")
+                                            # Pass the entire response to include token_usage
                                             display_release_notes(response)
                                         else:
                                             error_msg = response.get("message", "Unknown error") if response else "Failed to get response"
@@ -460,12 +554,17 @@ def main():
                                             time_remaining.text(f"Total time: {int(time.time() - start_time)}s")
                                             st.success(f"✅ Successfully processed {media_file.name}")
                                             
-                                            # Display results in expandable sections
-                                            with st.expander("📝 Video Transcript", expanded=False):
-                                                st.text_area("Full Transcript", response["transcript"], height=200)
+                                # Create a response object that matches our expected format
+                                            notes_response = {
+                                                "content": response["release_notes"],
+                                                "token_usage": response.get("token_usage", 0)  # Include token usage if available
+                                            }
+                                            # Display stats and open release notes in a new container
+                                            display_release_notes(notes_response)
                                             
-                                            st.markdown("### 📋 Generated Release Notes")
-                                            display_release_notes({"content": response["release_notes"]})
+                                            # Show transcript in expandable section below
+                                            with st.expander("📝 View Original Transcript", expanded=False):
+                                                st.text_area("Full Transcript", response["transcript"], height=200)
                                         else:
                                             error_msg = response.get("detail", "Unknown error") if response else "Failed to get response"
                                             st.error(f"Failed to process {media_file.name}: {error_msg}")

@@ -251,6 +251,7 @@ class OpenAIAgent:
         self.async_client = AsyncOpenAI(api_key=api_key)
         self.context = ""  # Store the current content
         self.template_content = self._load_template()
+        self.last_token_usage = 0  # Track token usage
         self.TEMPLATE = """
 Plug&Plai Assistant is an AI assistant for Sales, Product, and Customer Success teams that answers questions about the Compleet Vendor Platform and can generate Release Notes and Release Review presentations. The answers are based exclusively on the contents of the following updated documents.
 
@@ -623,6 +624,7 @@ Now analyze this content and generate release notes following the template struc
     async def _generate_release_notes_internal(self, file_obj: io.BytesIO, filename: str = None) -> Tuple[bool, str]:
         """Internal method for generating release notes"""
         logger.info("Starting async release notes generation")
+        self.last_token_usage = 0  # Reset token usage counter
         
         try:
             # Extract content from the uploaded file
@@ -643,6 +645,8 @@ Now analyze this content and generate release notes following the template struc
                     temperature=0,
                     max_tokens=2
                 )
+                # Track token usage
+                self.last_token_usage += detection_response.usage.total_tokens
                 detected_lang = detection_response.choices[0].message.content.strip().lower()
                 logger.info(f"Detected language: {detected_lang}")
             except Exception as e:
@@ -706,6 +710,8 @@ Now analyze this content and generate release notes following the template struc
                             frequency_penalty=0.1,
                             max_tokens=1000
                         )
+                        # Track token usage
+                        self.last_token_usage += response.usage.total_tokens
                         all_notes.append(response.choices[0].message.content)
                     except Exception as chunk_error:
                         logger.error(f"Error processing chunk {i+1}: {str(chunk_error)}")
@@ -736,6 +742,8 @@ Now analyze this content and generate release notes following the template struc
                         frequency_penalty=0.1,
                         max_tokens=2000
                     )
+                    # Track token usage
+                    self.last_token_usage += response.usage.total_tokens
                     logger.info("Successfully generated combined release notes")
                     return True, response.choices[0].message.content
                 except Exception as combine_error:
@@ -766,6 +774,8 @@ Now analyze this content and generate release notes following the template struc
                         frequency_penalty=0.1,
                         max_tokens=2000
                     )
+                    # Track token usage
+                    self.last_token_usage += response.usage.total_tokens
                     logger.info("Successfully generated release notes")
                     return True, response.choices[0].message.content
                 except Exception as api_error:

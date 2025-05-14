@@ -51,7 +51,9 @@ async def generate_release_notes(
             raise HTTPException(
                 status_code=400,
                 detail="Unsupported file type"
-            )        # Create a copy of the file in memory
+            )
+            
+        # Create a copy of the file in memory
         logger.info("Creating memory copy of file")
         file_copy = io.BytesIO()
         contents = await file.read()
@@ -90,7 +92,11 @@ async def generate_release_notes(
                 logger.error(f"Failed to store in database: {str(e)}", exc_info=True)
                 # Continue even if database storage fails
 
-        return {"success": True, "content": result}
+        return {
+            "success": True, 
+            "content": result,
+            "token_usage": openai_agent.last_token_usage  # Include token usage in response
+        }
 
     except HTTPException as http_error:
         logger.error(f"HTTP error generating release notes: {str(http_error.detail)}")

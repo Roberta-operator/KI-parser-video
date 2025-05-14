@@ -43,9 +43,7 @@ async def upload_video(file: UploadFile) -> Dict:
         # Get transcript from video
         success, transcript = await process_video_for_transcript(file_path)
         if not success:
-            raise HTTPException(status_code=500, detail=transcript)
-
-        # Generate release notes from transcript using OpenAIAgent for consistency
+            raise HTTPException(status_code=500, detail=transcript)        # Generate release notes from transcript using OpenAIAgent for consistency
         openai_agent = OpenAIAgent()
         success, release_notes = await openai_agent.generate_release_notes_async(
             io.BytesIO(transcript.encode()),
@@ -61,7 +59,8 @@ async def upload_video(file: UploadFile) -> Dict:
         return {
             "message": "Video processed successfully",
             "transcript": transcript,
-            "release_notes": release_notes
+            "release_notes": release_notes,
+            "token_usage": openai_agent.last_token_usage  # Include token usage from the release notes generation
         }
 
     except Exception as e:
