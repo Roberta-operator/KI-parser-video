@@ -7,6 +7,35 @@ from urllib3.util.retry import Retry
 from pathlib import Path
 from typing import Optional
 import time
+import subprocess
+import sys
+import atexit
+
+# Start FastAPI backend
+def start_backend():
+    try:
+        # Using sys.executable ensures we use the same Python interpreter
+        backend_process = subprocess.Popen(
+            [sys.executable, "-m", "uvicorn", "app.main:app", "--reload", "--log-level", "debug"],
+            # Redirect output to avoid cluttering the Streamlit interface
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            # Use shell=True on Windows
+            shell=True
+        )
+        
+        # Register cleanup function
+        atexit.register(lambda: backend_process.terminate())
+        
+        # Wait a bit for the server to start
+        time.sleep(2)
+        return backend_process
+    except Exception as e:
+        st.error(f"Failed to start backend server: {str(e)}")
+        return None
+
+# Start the backend when this script runs
+backend_process = start_backend()
 
 logger = logging.getLogger(__name__)
 

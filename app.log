@@ -1,0 +1,20 @@
+2025-05-15 10:50:47,717 - app.routes.generate - INFO - Starting to process file: Sindbad Hotel Route Touristique.pdf
+2025-05-15 10:50:47,934 - app.routes.generate - INFO - File size: 0.07MB
+2025-05-15 10:50:47,977 - app.routes.generate - INFO - File extension: pdf
+2025-05-15 10:50:47,978 - app.routes.generate - INFO - Creating memory copy of file
+2025-05-15 10:50:47,979 - app.routes.generate - INFO - Initializing OpenAI agent
+2025-05-15 10:50:48,817 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-05-15 10:50:48,817 - app.routes.generate - INFO - Calling OpenAI agent to generate release notes
+2025-05-15 10:50:48,817 - app.utils.openai_agent - INFO - Starting async release notes generation
+2025-05-15 10:50:48,817 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-05-15 10:50:48,817 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-05-15 10:50:48,817 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-05-15 10:50:48,949 - app.utils.openai_agent - INFO - PDF has 1 pages
+2025-05-15 10:50:48,982 - app.utils.openai_agent - INFO - Successfully extracted 2186 characters from PDF
+2025-05-15 10:50:48,982 - app.utils.openai_agent - INFO - Detecting content language
+2025-05-15 10:50:50,747 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 10:50:50,754 - app.utils.openai_agent - INFO - Detected language: en
+2025-05-15 10:50:50,764 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
+2025-05-15 10:51:07,279 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 10:51:07,289 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-05-15 10:51:07,289 - app.routes.generate - INFO - Successfully generated release notes
