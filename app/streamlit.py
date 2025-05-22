@@ -7,40 +7,12 @@ from urllib3.util.retry import Retry
 from pathlib import Path
 from typing import Optional
 import time
-import subprocess
-import sys
-import atexit
 
-# Start FastAPI backend
-def start_backend():
-    try:
-        # Using sys.executable ensures we use the same Python interpreter
-        backend_process = subprocess.Popen(
-            [sys.executable, "-m", "uvicorn", "app.main:app", "--reload", "--log-level", "debug"],
-            # Redirect output to avoid cluttering the Streamlit interface
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            # Use shell=True on Windows
-            shell=True
-        )
-        
-        # Register cleanup function
-        atexit.register(lambda: backend_process.terminate())
-        
-        # Wait a bit for the server to start
-        time.sleep(2)
-        return backend_process
-    except Exception as e:
-        st.error(f"Failed to start backend server: {str(e)}")
-        return None
-
-# Start the backend when this script runs
-backend_process = start_backend()
-
+# The backend is now deployed at https://ki-parser-video.fly.dev
 logger = logging.getLogger(__name__)
 
 # Constants
-API_URL = "http://localhost:8000"
+API_URL = "https://ki-parser-video.fly.dev/health"
 MAX_FILE_SIZE_MB = {
     'document': 10,  # Keep 10MB limit for documents
     'media': 100     # 100MB limit for media files
@@ -222,7 +194,7 @@ def handle_api_request(method, endpoint, **kwargs):
         kwargs['timeout'] = 90  # 90 seconds timeout for generation
         response = session.request(
             method,
-            f"http://127.0.0.1:8000{endpoint}",
+            f"https://ki-parser-video.fly.dev{endpoint}",
             **kwargs
         )
         response.raise_for_status()
