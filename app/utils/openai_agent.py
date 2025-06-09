@@ -540,7 +540,7 @@ Now analyze this content and generate release notes following the template struc
                 'de': "Schreiben Sie die Release Notes auf Deutsch.",
                 'es': "Escribe las notas de versión en español.",
                 'it': "Scrivi le note di rilascio in italiano.",
-                'pt': "Escreva as notas de versão em português.",
+                'pt': "Escreva as notas di rilascio em português.",
                 'nl': "Schrijf de releasenotities in het Nederlands.",
                 'pl': "Napisz notatkę o wydaniu w języku polskim."
             }
@@ -614,38 +614,40 @@ Now analyze this content and generate release notes following the template struc
             logger.error(f"Operation timed out after {timeout_seconds} seconds")
             return False, f"Operation timed out after {timeout_seconds} seconds. Please try with a smaller file or try again later."
             
-    async def generate_release_notes_async(self, file_obj: io.BytesIO, filename: str = None, timeout_seconds: int = 180) -> Tuple[bool, str]:
-        """Generate release notes from the file content asynchronously with timeout"""
-        return await self._process_with_timeout(
-            self._generate_release_notes_internal(file_obj, filename),
-            timeout_seconds
-        )
-        
-    async def _generate_release_notes_internal(self, file_obj: io.BytesIO, filename: str = None) -> Tuple[bool, str]:
-        """Internal method for generating release notes"""
-        logger.info("Starting async release notes generation")
-        self.last_token_usage = 0  # Reset token usage counter
-        
-        try:
-            # Extract content from the uploaded file
+    async def generate_release_notes_async(self, files: List[io.BytesIO], filenames: List[str] = None, timeout_seconds: int = 180) -> Tuple[bool, str]:
+        """Generate release notes from multiple files asynchronously with timeout"""
+        combined_content = ""
+
+        for file_obj, filename in zip(files, filenames):
             success, content = self.extract_text_from_memory(file_obj, filename)
             if not success:
-                logger.error("Failed to process transcript")
-                return False, "Failed to process the transcript file"
+                logger.error(f"Failed to process file: {filename}")
+                return False, f"Failed to process file: {filename}"
+            combined_content += content + "\n\n"
 
-            # Detect language from content
+        return await self._process_with_timeout(
+            self._generate_release_notes_internal_combined(combined_content),
+            timeout_seconds
+        )
+
+    async def _generate_release_notes_internal_combined(self, combined_content: str) -> Tuple[bool, str]:
+        """Internal method for generating release notes from combined content"""
+        logger.info("Starting async release notes generation for combined content")
+        self.last_token_usage = 0  # Reset token usage counter
+
+        try:
+            # Detect language from combined content
             try:
                 logger.info("Detecting content language")
                 detection_response = await self.async_client.chat.completions.create(
                     model="gpt-3.5-turbo",
                     messages=[
                         {"role": "system", "content": "You are a language detection expert. Respond only with the ISO 639-1 language code of the text."},
-                        {"role": "user", "content": f"What is the language code of this text (respond with only the 2-letter code):\n\n{content[:2000]}"}
+                        {"role": "user", "content": f"What is the language code of this text (respond with only the 2-letter code):\n\n{combined_content[:2000]}"}
                     ],
                     temperature=0,
                     max_tokens=2
                 )
-                # Track token usage
                 self.last_token_usage += detection_response.usage.total_tokens
                 detected_lang = detection_response.choices[0].message.content.strip().lower()
                 logger.info(f"Detected language: {detected_lang}")
@@ -658,130 +660,55 @@ Now analyze this content and generate release notes following the template struc
                 'en': "You are a skilled technical writer specializing in creating clear and concise release notes in English.",
                 'fr': "Vous êtes un rédacteur technique spécialisé dans la création de notes de version claires et concises en français.",
                 'de': "Sie sind ein technischer Redakteur, der sich auf die Erstellung klarer und präziser Release Notes in deutscher Sprache spezialisiert hat.",
-                'es': "Eres un redactor técnico especializado en crear notas de versión claras y concisas en español.",
+                'es': "Eres un redactor técnico especializado en crear notas de versión claras e concisas en español.",
                 'it': "Sei un redattore tecnico specializzato nella creazione di note di rilascio chiare e concise in italiano.",
                 'pt': "Você é um redator técnico especializado em criar notas de versão claras e concisas em português.",
                 'nl': "U bent een technisch schrijver gespecialiseerd in het maken van heldere en beknopte releasenotities in het Nederlands.",
                 'pl': "Jesteś doświadczonym redaktorem technicznym specjalizującym się w tworzeniu przejrzystych i zwięzłych notatek o wydaniu w języku polskim."
             }
 
-            # Add language instruction to the system prompt
             language_instructions = {
                 'en': "Write the release notes in English.",
                 'fr': "Rédigez les notes de version en français.",
                 'de': "Schreiben Sie die Release Notes auf Deutsch.",
                 'es': "Escribe las notas de versión en español.",
                 'it': "Scrivi le note di rilascio in italiano.",
-                'pt': "Escreva as notas de versão em português.",
+                'pt': "Escreva as notas di rilascio em português.",
                 'nl': "Schrijf de releasenotities in het Nederlands.",
                 'pl': "Napisz notatkę o wydaniu w języku polskim."
             }
 
-            # Use detected language or default to English if not supported
             system_message = system_messages.get(detected_lang, system_messages['en'])
             language_instruction = language_instructions.get(detected_lang, language_instructions['en'])
 
-            # Set the content and chunk it if necessary
-            self.context = content
-            content_chunks = self._chunk_content(content)
-            
-            # If content needs to be chunked
-            if len(content_chunks) > 1:
-                all_notes = []
-                for i, chunk in enumerate(content_chunks):
-                    try:
-                        system_prompt = self.TEMPLATE.format(
-                            template_content=self.template_content,
-                            content=chunk,
-                            date=datetime.now()
-                        )
-                        # Add language-specific instructions
-                        system_prompt = f"{system_message}\n\n{language_instruction}\n\n{system_prompt}"
-                        
-                        logger.info(f"Processing chunk {i+1} of {len(content_chunks)} in {detected_lang}")
-                        response = await self.async_client.chat.completions.create(
-                            model="gpt-4-turbo-preview",
-                            messages=[
-                                {"role": "system", "content": system_prompt},
-                                {"role": "user", "content": f"Generate release notes for part {i+1} of {len(content_chunks)}"}
-                            ],
-                            temperature=0.7,
-                            presence_penalty=0.1,
-                            frequency_penalty=0.1,
-                            max_tokens=1000
-                        )
-                        # Track token usage
-                        self.last_token_usage += response.usage.total_tokens
-                        all_notes.append(response.choices[0].message.content)
-                    except Exception as chunk_error:
-                        logger.error(f"Error processing chunk {i+1}: {str(chunk_error)}")
-                        continue  # Continue with next chunk if one fails
+            # Generate release notes
+            try:
+                system_prompt = self.TEMPLATE.format(
+                    template_content=self.template_content,
+                    content=combined_content,
+                    date=datetime.now()
+                )
+                system_prompt = f"{system_message}\n\n{language_instruction}\n\n{system_prompt}"
 
-                if not all_notes:
-                    return False, "Failed to process any content chunks successfully"
+                logger.info(f"Calling OpenAI API with detected language: {detected_lang}")
+                response = await self.async_client.chat.completions.create(
+                    model="gpt-4-turbo-preview",
+                    messages=[
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": "Generate release notes from the learned content"}
+                    ],
+                    temperature=0.7,
+                    presence_penalty=0.1,
+                    frequency_penalty=0.1,
+                    max_tokens=2000
+                )
+                self.last_token_usage += response.usage.total_tokens
+                logger.info("Successfully generated release notes")
+                return True, response.choices[0].message.content
+            except Exception as api_error:
+                logger.error(f"OpenAI API error: {str(api_error)}")
+                return False, f"OpenAI API error: {str(api_error)}"
 
-                try:
-                    # Combine all chunks
-                    final_prompt = self.TEMPLATE.format(
-                        template_content=self.template_content,
-                        content="\n\n".join(all_notes),
-                        date=datetime.now()
-                    )
-                    # Add language-specific instructions for final combination
-                    final_prompt = f"{system_message}\n\n{language_instruction}\n\n{final_prompt}"
-                    
-                    # Final pass to combine and refine
-                    response = await self.async_client.chat.completions.create(
-                        model="gpt-4-turbo-preview",
-                        messages=[
-                            {"role": "system", "content": final_prompt},
-                            {"role": "user", "content": "Combine and refine these release notes into a single coherent document"}
-                        ],
-                        temperature=0.7,
-                        presence_penalty=0.1,
-                        frequency_penalty=0.1,
-                        max_tokens=2000
-                    )
-                    # Track token usage
-                    self.last_token_usage += response.usage.total_tokens
-                    logger.info("Successfully generated combined release notes")
-                    return True, response.choices[0].message.content
-                except Exception as combine_error:
-                    logger.error(f"Error combining release notes: {str(combine_error)}")
-                    # If combination fails, return the concatenated chunks
-                    return True, "\n\n".join(all_notes)
-                    
-            else:
-                # Process single chunk with language detection
-                try:
-                    system_prompt = self.TEMPLATE.format(
-                        template_content=self.template_content,
-                        content=self.context,
-                        date=datetime.now()
-                    )
-                    # Add language-specific instructions
-                    system_prompt = f"{system_message}\n\n{language_instruction}\n\n{system_prompt}"
-
-                    logger.info(f"Calling OpenAI API asynchronously with detected language: {detected_lang}")
-                    response = await self.async_client.chat.completions.create(
-                        model="gpt-4-turbo-preview",
-                        messages=[
-                            {"role": "system", "content": system_prompt},
-                            {"role": "user", "content": "Generate release notes from the learned content"}
-                        ],
-                        temperature=0.7,
-                        presence_penalty=0.1,
-                        frequency_penalty=0.1,
-                        max_tokens=2000
-                    )
-                    # Track token usage
-                    self.last_token_usage += response.usage.total_tokens
-                    logger.info("Successfully generated release notes")
-                    return True, response.choices[0].message.content
-                except Exception as api_error:
-                    logger.error(f"OpenAI API error: {str(api_error)}")
-                    return False, f"OpenAI API error: {str(api_error)}"
-                    
         except Exception as e:
             logger.error(f"Unexpected error in generate_release_notes_async: {str(e)}")
             return False, f"Error generating release notes: {str(e)}"

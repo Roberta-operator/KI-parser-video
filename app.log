@@ -1,176 +1,186 @@
-2025-05-15 10:50:47,717 - app.routes.generate - INFO - Starting to process file: Sindbad Hotel Route Touristique.pdf
-2025-05-15 10:50:47,934 - app.routes.generate - INFO - File size: 0.07MB
-2025-05-15 10:50:47,977 - app.routes.generate - INFO - File extension: pdf
-2025-05-15 10:50:47,978 - app.routes.generate - INFO - Creating memory copy of file
-2025-05-15 10:50:47,979 - app.routes.generate - INFO - Initializing OpenAI agent
-2025-05-15 10:50:48,817 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-15 10:50:48,817 - app.routes.generate - INFO - Calling OpenAI agent to generate release notes
-2025-05-15 10:50:48,817 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-15 10:50:48,817 - app.utils.openai_agent - INFO - Processing file with extension: pdf
-2025-05-15 10:50:48,817 - app.utils.openai_agent - INFO - Extracting text from PDF
-2025-05-15 10:50:48,817 - app.utils.openai_agent - INFO - Starting PDF text extraction
-2025-05-15 10:50:48,949 - app.utils.openai_agent - INFO - PDF has 1 pages
-2025-05-15 10:50:48,982 - app.utils.openai_agent - INFO - Successfully extracted 2186 characters from PDF
-2025-05-15 10:50:48,982 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-15 10:50:50,747 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-15 10:50:50,754 - app.utils.openai_agent - INFO - Detected language: en
-2025-05-15 10:50:50,764 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
-2025-05-15 10:51:07,279 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-15 10:51:07,289 - app.utils.openai_agent - INFO - Successfully generated release notes
-2025-05-15 10:51:07,289 - app.routes.generate - INFO - Successfully generated release notes
-2025-05-15 15:19:21,468 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
-2025-05-15 15:19:21,469 - app.routes.generate - INFO - File size: 0.10MB
-2025-05-15 15:19:21,469 - app.routes.generate - INFO - File extension: pdf
-2025-05-15 15:19:21,469 - app.routes.generate - INFO - Creating memory copy of file
-2025-05-15 15:19:21,469 - app.routes.generate - INFO - Initializing OpenAI agent
-2025-05-15 15:19:22,021 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-15 15:19:22,021 - app.routes.generate - INFO - Calling OpenAI agent to generate release notes
-2025-05-15 15:19:22,021 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-15 15:19:22,021 - app.utils.openai_agent - INFO - Processing file with extension: pdf
-2025-05-15 15:19:22,021 - app.utils.openai_agent - INFO - Extracting text from PDF
-2025-05-15 15:19:22,021 - app.utils.openai_agent - INFO - Starting PDF text extraction
-2025-05-15 15:19:22,022 - app.utils.openai_agent - INFO - PDF has 2 pages
-2025-05-15 15:19:22,031 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
-2025-05-15 15:19:22,031 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-15 15:19:23,474 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-15 15:19:23,502 - app.utils.openai_agent - INFO - Detected language: en
-2025-05-15 15:19:23,503 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
-2025-05-15 15:19:47,821 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-15 15:19:47,825 - app.utils.openai_agent - INFO - Successfully generated release notes
-2025-05-15 15:19:47,825 - app.routes.generate - INFO - Successfully generated release notes
-2025-05-15 15:32:02,281 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
-2025-05-15 15:32:02,281 - app.routes.generate - INFO - File size: 0.10MB
-2025-05-15 15:32:02,282 - app.routes.generate - INFO - File extension: pdf
-2025-05-15 15:32:02,282 - app.routes.generate - INFO - Creating memory copy of file
-2025-05-15 15:32:02,282 - app.routes.generate - INFO - Initializing OpenAI agent
-2025-05-15 15:32:03,139 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-15 15:32:03,140 - app.routes.generate - INFO - Calling OpenAI agent to generate release notes
-2025-05-15 15:32:03,140 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-15 15:32:03,140 - app.utils.openai_agent - INFO - Processing file with extension: pdf
-2025-05-15 15:32:03,140 - app.utils.openai_agent - INFO - Extracting text from PDF
-2025-05-15 15:32:03,140 - app.utils.openai_agent - INFO - Starting PDF text extraction
-2025-05-15 15:32:03,141 - app.utils.openai_agent - INFO - PDF has 2 pages
-2025-05-15 15:32:03,157 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
-2025-05-15 15:32:03,157 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-15 15:32:03,606 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-15 15:32:03,607 - app.utils.openai_agent - INFO - Detected language: en
-2025-05-15 15:32:03,608 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
-2025-05-15 15:32:40,999 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-15 15:32:41,043 - app.utils.openai_agent - INFO - Successfully generated release notes
-2025-05-15 15:32:41,043 - app.routes.generate - INFO - Successfully generated release notes
-2025-05-15 15:33:58,474 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
-2025-05-15 15:33:59,441 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-15 15:33:59,441 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-15 15:33:59,441 - app.utils.openai_agent - INFO - Processing file with extension: txt
-2025-05-15 15:33:59,442 - app.utils.openai_agent - INFO - Extracting text from TXT
-2025-05-15 15:33:59,442 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-15 15:33:59,862 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-15 15:33:59,867 - app.utils.openai_agent - INFO - Detected language: en
-2025-05-15 15:33:59,867 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
-2025-05-15 15:34:18,014 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-15 15:34:18,017 - app.utils.openai_agent - INFO - Successfully generated release notes
-2025-05-15 15:38:05,823 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
-2025-05-15 15:38:06,816 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-15 15:38:06,817 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-15 15:38:06,817 - app.utils.openai_agent - INFO - Processing file with extension: txt
-2025-05-15 15:38:06,817 - app.utils.openai_agent - INFO - Extracting text from TXT
-2025-05-15 15:38:06,817 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-15 15:38:07,563 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-15 15:38:07,564 - app.utils.openai_agent - INFO - Detected language: en
-2025-05-15 15:38:07,564 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
-2025-05-15 15:38:24,013 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-15 15:38:24,048 - app.utils.openai_agent - INFO - Successfully generated release notes
-2025-05-16 13:53:47,762 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
-2025-05-16 13:53:48,519 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-16 13:53:48,520 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-16 13:53:48,520 - app.utils.openai_agent - INFO - Processing file with extension: txt
-2025-05-16 13:53:48,520 - app.utils.openai_agent - INFO - Extracting text from TXT
-2025-05-16 13:53:48,520 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-16 13:53:49,239 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-16 13:53:49,241 - app.utils.openai_agent - INFO - Detected language: en
-2025-05-16 13:53:49,241 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
-2025-05-16 13:54:06,164 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-16 13:54:06,166 - app.utils.openai_agent - INFO - Successfully generated release notes
-2025-05-21 10:10:26,809 - app.routes.generate - INFO - Starting to process file: 1905251102.pdf
-2025-05-21 10:10:26,809 - app.routes.generate - INFO - File size: 0.05MB
-2025-05-21 10:10:26,809 - app.routes.generate - INFO - File extension: pdf
-2025-05-21 10:10:26,809 - app.routes.generate - INFO - Creating memory copy of file
-2025-05-21 10:10:26,809 - app.routes.generate - INFO - Initializing OpenAI agent
-2025-05-21 10:10:27,514 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-21 10:10:27,514 - app.routes.generate - INFO - Calling OpenAI agent to generate release notes
-2025-05-21 10:10:27,514 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-21 10:10:27,514 - app.utils.openai_agent - INFO - Processing file with extension: pdf
-2025-05-21 10:10:27,514 - app.utils.openai_agent - INFO - Extracting text from PDF
-2025-05-21 10:10:27,514 - app.utils.openai_agent - INFO - Starting PDF text extraction
-2025-05-21 10:10:27,515 - app.utils.openai_agent - INFO - PDF has 1 pages
-2025-05-21 10:10:27,520 - app.utils.openai_agent - INFO - Successfully extracted 397 characters from PDF
-2025-05-21 10:10:27,521 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-21 10:10:28,630 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 10:10:28,635 - app.utils.openai_agent - INFO - Detected language: de
-2025-05-21 10:10:28,635 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: de
-2025-05-21 10:10:40,653 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 10:10:40,658 - app.utils.openai_agent - INFO - Successfully generated release notes
-2025-05-21 10:10:40,659 - app.routes.generate - INFO - Successfully generated release notes
-2025-05-21 10:18:22,738 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
-2025-05-21 10:18:22,739 - app.utils.file_processor - ERROR - Error processing video transcript: Error code: 400 - {'error': {'message': "Invalid file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
-2025-05-21 10:37:36,163 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
-2025-05-21 10:37:36,710 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-21 10:37:36,710 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-21 10:37:36,710 - app.utils.openai_agent - INFO - Processing file with extension: txt
-2025-05-21 10:37:36,710 - app.utils.openai_agent - INFO - Extracting text from TXT
-2025-05-21 10:37:36,710 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-21 10:37:37,153 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 10:37:37,156 - app.utils.openai_agent - INFO - Detected language: en
-2025-05-21 10:37:37,157 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
-2025-05-21 10:37:54,433 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 10:37:54,438 - app.utils.openai_agent - INFO - Successfully generated release notes
-2025-05-21 10:38:09,133 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
-2025-05-21 10:38:09,133 - app.utils.file_processor - ERROR - Error processing video transcript: Error code: 400 - {'error': {'message': "Invalid file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
-2025-05-21 10:38:18,449 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
-2025-05-21 10:38:18,450 - app.utils.file_processor - ERROR - Error processing video transcript: Error code: 400 - {'error': {'message': "Invalid file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
-2025-05-21 10:38:49,340 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
-2025-05-21 10:38:50,118 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-21 10:38:50,118 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-21 10:38:50,118 - app.utils.openai_agent - INFO - Processing file with extension: txt
-2025-05-21 10:38:50,118 - app.utils.openai_agent - INFO - Extracting text from TXT
-2025-05-21 10:38:50,118 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-21 10:38:50,652 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 10:38:50,662 - app.utils.openai_agent - INFO - Detected language: en
-2025-05-21 10:38:50,662 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
-2025-05-21 10:39:30,752 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 10:39:30,759 - app.utils.openai_agent - INFO - Successfully generated release notes
-2025-05-21 11:07:07,685 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 413 Payload Too Large"
-2025-05-21 11:07:07,686 - app.utils.file_processor - ERROR - Error processing video transcript: Error code: 413 - {'error': {'message': '413: Maximum content size limit (26214400) exceeded (26293740 bytes read)', 'type': 'server_error', 'param': None, 'code': None}}
-2025-05-21 11:08:54,303 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
-2025-05-21 11:08:55,235 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-21 11:08:55,235 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-21 11:08:55,235 - app.utils.openai_agent - INFO - Processing file with extension: txt
-2025-05-21 11:08:55,235 - app.utils.openai_agent - INFO - Extracting text from TXT
-2025-05-21 11:08:55,235 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-21 11:08:55,852 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 11:08:55,853 - app.utils.openai_agent - INFO - Detected language: de
-2025-05-21 11:08:55,854 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: de
-2025-05-21 11:09:12,663 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 11:09:12,677 - app.utils.openai_agent - INFO - Successfully generated release notes
-2025-05-21 11:40:00,703 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
-2025-05-21 11:40:01,655 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-21 11:40:01,655 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-21 11:40:01,655 - app.utils.openai_agent - INFO - Processing file with extension: txt
-2025-05-21 11:40:01,655 - app.utils.openai_agent - INFO - Extracting text from TXT
-2025-05-21 11:40:01,655 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-21 11:40:02,377 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 11:40:02,378 - app.utils.openai_agent - INFO - Detected language: de
-2025-05-21 11:40:02,378 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: de
-2025-05-21 11:40:15,761 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 11:40:15,773 - app.utils.openai_agent - INFO - Successfully generated release notes
-2025-05-21 11:45:28,272 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
-2025-05-21 11:45:29,212 - app.utils.openai_agent - INFO - Successfully loaded template content
-2025-05-21 11:45:29,212 - app.utils.openai_agent - INFO - Starting async release notes generation
-2025-05-21 11:45:29,212 - app.utils.openai_agent - INFO - Processing file with extension: txt
-2025-05-21 11:45:29,212 - app.utils.openai_agent - INFO - Extracting text from TXT
-2025-05-21 11:45:29,212 - app.utils.openai_agent - INFO - Detecting content language
-2025-05-21 11:45:29,665 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 11:45:29,667 - app.utils.openai_agent - INFO - Detected language: en
-2025-05-21 11:45:29,667 - app.utils.openai_agent - INFO - Calling OpenAI API asynchronously with detected language: en
-2025-05-21 11:45:49,158 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-05-21 11:45:49,167 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-09 13:12:01,430 - app.routes.generate - INFO - Starting to process file: Research What AI features use Helpdesk and zendesk.pdf
+2025-06-09 13:12:01,430 - app.routes.generate - INFO - File size: 0.11MB
+2025-06-09 13:12:01,430 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 13:12:01,431 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 13:12:02,002 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 13:12:02,002 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 13:12:02,002 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 13:12:02,002 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 13:12:02,002 - app.utils.openai_agent - INFO - PDF has 5 pages
+2025-06-09 13:12:02,014 - app.utils.openai_agent - INFO - Successfully extracted 1805 characters from PDF
+2025-06-09 13:12:02,014 - app.routes.generate - INFO - Starting to process file: Bewerbung (PDF).pdf
+2025-06-09 13:12:02,014 - app.routes.generate - INFO - File size: 0.08MB
+2025-06-09 13:12:02,014 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 13:12:02,014 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 13:12:02,588 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 13:12:02,589 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 13:12:02,589 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 13:12:02,589 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 13:12:02,590 - app.utils.openai_agent - INFO - PDF has 1 pages
+2025-06-09 13:12:02,595 - app.utils.openai_agent - INFO - Successfully extracted 1356 characters from PDF
+2025-06-09 13:12:02,596 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-09 13:12:02,596 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-09 13:12:02,596 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-09 13:12:02,596 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-09 13:12:02,596 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-09 13:12:03,366 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 13:12:03,368 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-09 13:12:03,369 - app.utils.openai_agent - INFO - Calling OpenAI API with detected language: en
+2025-06-09 13:12:28,565 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 13:12:28,571 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-09 13:12:28,571 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-09 13:18:30,010 - app.routes.generate - INFO - Starting to process file: Research What AI features use Helpdesk and zendesk.pdf
+2025-06-09 13:18:30,011 - app.routes.generate - INFO - File size: 0.11MB
+2025-06-09 13:18:30,011 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 13:18:30,011 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 13:18:30,578 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 13:18:30,578 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 13:18:30,578 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 13:18:30,578 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 13:18:30,578 - app.utils.openai_agent - INFO - PDF has 5 pages
+2025-06-09 13:18:30,589 - app.utils.openai_agent - INFO - Successfully extracted 1805 characters from PDF
+2025-06-09 13:18:30,589 - app.routes.generate - INFO - Starting to process file: Bewerbung (PDF).pdf
+2025-06-09 13:18:30,589 - app.routes.generate - INFO - File size: 0.08MB
+2025-06-09 13:18:30,589 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 13:18:30,589 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 13:18:31,147 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 13:18:31,148 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 13:18:31,148 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 13:18:31,148 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 13:18:31,149 - app.utils.openai_agent - INFO - PDF has 1 pages
+2025-06-09 13:18:31,154 - app.utils.openai_agent - INFO - Successfully extracted 1356 characters from PDF
+2025-06-09 13:18:31,154 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-09 13:18:31,154 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-09 13:18:31,154 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-09 13:18:31,154 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-09 13:18:31,154 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-09 13:18:32,119 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 13:18:32,123 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-09 13:18:32,123 - app.utils.openai_agent - INFO - Calling OpenAI API with detected language: en
+2025-06-09 13:19:01,055 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 13:19:01,057 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-09 13:19:01,057 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-09 13:32:59,971 - app.routes.generate - INFO - Starting to process file: Research What AI features use Helpdesk and zendesk.pdf
+2025-06-09 13:32:59,971 - app.routes.generate - INFO - File size: 0.11MB
+2025-06-09 13:32:59,971 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 13:32:59,971 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 13:33:00,538 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 13:33:00,539 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 13:33:00,539 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 13:33:00,539 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 13:33:00,539 - app.utils.openai_agent - INFO - PDF has 5 pages
+2025-06-09 13:33:00,550 - app.utils.openai_agent - INFO - Successfully extracted 1805 characters from PDF
+2025-06-09 13:33:00,550 - app.routes.generate - INFO - Starting to process file: Bewerbung (PDF).pdf
+2025-06-09 13:33:00,550 - app.routes.generate - INFO - File size: 0.08MB
+2025-06-09 13:33:00,550 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 13:33:00,550 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 13:33:01,106 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 13:33:01,107 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 13:33:01,107 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 13:33:01,107 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 13:33:01,107 - app.utils.openai_agent - INFO - PDF has 1 pages
+2025-06-09 13:33:01,112 - app.utils.openai_agent - INFO - Successfully extracted 1356 characters from PDF
+2025-06-09 13:33:01,112 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-09 13:33:01,112 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-09 13:33:01,112 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-09 13:33:01,113 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-09 13:33:01,113 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-09 13:33:01,914 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 13:33:01,916 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-09 13:33:01,916 - app.utils.openai_agent - INFO - Calling OpenAI API with detected language: en
+2025-06-09 13:33:18,495 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 13:33:18,598 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-09 13:33:18,598 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-09 14:20:00,815 - app.routes.generate - INFO - Starting to process file: Research What AI features use Helpdesk and zendesk.pdf
+2025-06-09 14:20:00,815 - app.routes.generate - INFO - File size: 0.11MB
+2025-06-09 14:20:00,815 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 14:20:00,815 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 14:20:01,433 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 14:20:01,433 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 14:20:01,433 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 14:20:01,433 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 14:20:01,433 - app.utils.openai_agent - INFO - PDF has 5 pages
+2025-06-09 14:20:01,444 - app.utils.openai_agent - INFO - Successfully extracted 1805 characters from PDF
+2025-06-09 14:20:01,444 - app.routes.generate - INFO - Starting to process file: Bewerbung (PDF).pdf
+2025-06-09 14:20:01,444 - app.routes.generate - INFO - File size: 0.08MB
+2025-06-09 14:20:01,444 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 14:20:01,444 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 14:20:02,081 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 14:20:02,081 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 14:20:02,082 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 14:20:02,082 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 14:20:02,082 - app.utils.openai_agent - INFO - PDF has 1 pages
+2025-06-09 14:20:02,087 - app.utils.openai_agent - INFO - Successfully extracted 1356 characters from PDF
+2025-06-09 14:20:02,088 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-09 14:20:02,088 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-09 14:20:02,088 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-09 14:20:02,088 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-09 14:20:02,088 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-09 14:20:03,290 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 14:20:03,298 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-09 14:20:03,298 - app.utils.openai_agent - INFO - Calling OpenAI API with detected language: en
+2025-06-09 14:20:26,583 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 14:20:26,586 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-09 14:20:26,586 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-09 14:41:35,518 - app.routes.generate - INFO - Starting to process file: PLUG AND CHAT.pdf
+2025-06-09 14:41:35,518 - app.routes.generate - INFO - File size: 12.27MB
+2025-06-09 14:41:35,518 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 14:41:35,518 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 14:41:36,277 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 14:41:36,277 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 14:41:36,277 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 14:41:36,277 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 14:41:36,278 - app.utils.openai_agent - INFO - PDF has 16 pages
+2025-06-09 14:41:36,514 - app.utils.openai_agent - INFO - Successfully extracted 3080 characters from PDF
+2025-06-09 14:41:36,514 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
+2025-06-09 14:41:36,514 - app.routes.generate - INFO - File size: 0.10MB
+2025-06-09 14:41:36,514 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 14:41:36,514 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 14:41:37,428 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 14:41:37,430 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 14:41:37,430 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 14:41:37,430 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 14:41:37,431 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-06-09 14:41:37,440 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
+2025-06-09 14:41:37,441 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-09 14:41:37,441 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-09 14:41:37,441 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-09 14:41:37,441 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-09 14:41:37,441 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-09 14:41:38,497 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 14:41:38,504 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-09 14:41:38,504 - app.utils.openai_agent - INFO - Calling OpenAI API with detected language: en
+2025-06-09 14:42:00,801 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 14:42:00,813 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-09 14:42:00,813 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-09 14:44:47,493 - app.routes.generate - INFO - Starting to process file: PLUG AND CHAT.pdf
+2025-06-09 14:44:47,493 - app.routes.generate - INFO - File size: 12.27MB
+2025-06-09 14:44:47,493 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 14:44:47,493 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 14:44:48,062 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 14:44:48,062 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 14:44:48,062 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 14:44:48,062 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 14:44:48,063 - app.utils.openai_agent - INFO - PDF has 16 pages
+2025-06-09 14:44:48,219 - app.utils.openai_agent - INFO - Successfully extracted 3080 characters from PDF
+2025-06-09 14:44:48,219 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
+2025-06-09 14:44:48,219 - app.routes.generate - INFO - File size: 0.10MB
+2025-06-09 14:44:48,219 - app.routes.generate - INFO - File extension: pdf
+2025-06-09 14:44:48,219 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-09 14:44:48,782 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-09 14:44:48,783 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-09 14:44:48,783 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-09 14:44:48,783 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-09 14:44:48,783 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-06-09 14:44:48,789 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
+2025-06-09 14:44:48,789 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-09 14:44:48,789 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-09 14:44:48,789 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-09 14:44:48,789 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-09 14:44:48,789 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-09 14:44:49,583 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 14:44:49,585 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-09 14:44:49,585 - app.utils.openai_agent - INFO - Calling OpenAI API with detected language: en
+2025-06-09 14:45:17,930 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 14:45:17,934 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-09 14:45:17,934 - app.routes.generate - INFO - Successfully generated release notes
