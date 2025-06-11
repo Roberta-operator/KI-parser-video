@@ -107,7 +107,7 @@ def combine_release_notes(notes_list: List[str]) -> str:
             temperature=0.7,
             max_tokens=2000
         )
-        return response.choices[0].message.content
+        return response.choices[0].message.content or ""
     except Exception as e:
         logger.error(f"Error combining release notes: {str(e)}")
         # Fallback to simple combination if the API call fails
@@ -190,7 +190,7 @@ async def process_document_with_openai(content: bytes, filename: str, language: 
             'en': "You are a skilled technical writer specializing in creating clear and concise release notes in English.",
             'fr': "Vous êtes un rédacteur technique spécialisé dans la création de notes de version claires et concises en français.",
             'de': "Sie sind ein technischer Redakteur, der sich auf die Erstellung klarer und präziser Release Notes in deutscher Sprache spezialisiert hat.",
-            'es': "Eres un redactor técnico especializado en crear notas de versión claras y concisas en español.",
+            'es': "Eres un redactor técnico especializado en crear notas de versión claras e concisas en español.",
             'it': "Sei un redattore tecnico specializzato nella creazione di note di rilascio chiare e concise in italiano.",
             'pt': "Você é um redator técnico especializado em criar notas de versão claras e concisas em português.",
             'nl': "U bent een technisch schrijver gespecialiseerd in het maken van heldere en beknopte releasenotities in het Nederlands.",
@@ -204,7 +204,7 @@ async def process_document_with_openai(content: bytes, filename: str, language: 
             'de': "Schreiben Sie die Release Notes auf Deutsch.",
             'es': "Escribe las notas de versión en español.",
             'it': "Scrivi le note di rilascio in italiano.",
-            'pt': "Escreva as notas de versão em português.",
+            'pt': "Escreva as notas di versão em português.",
             'nl': "Schrijf de releasenotities in het Nederlands.",
             'pl': "Napisz notatkę o wydaniu w języku polskim."
         }
@@ -253,7 +253,9 @@ class OpenAIAgent:
         self.template_content = self._load_template()
         self.last_token_usage = 0  # Track token usage
         self.TEMPLATE = """
-Plug&Plai Assistant is an AI assistant for Sales, Product, and Customer Success teams that answers questions about the Compleet Vendor Platform and can generate Release Notes and Release Review presentations. The answers are based exclusively on the contents of the following updated documents.
+
+Your task is to write a release notes based on the transcript with key points and insights into the feature.
+The release notes should be informative and serve as a good guide for anyone who will use this released feature.
 
 **Reference Template - Use this exact structure and style for your release notes:**
 {template_content}
@@ -271,26 +273,31 @@ Plug&Plai Assistant is an AI assistant for Sales, Product, and Customer Success 
 - Key benefits and improvements
 
 **Instructions for Release Notes Generation:**
-1. Study the reference template above carefully - it shows the exact structure and style to follow
-2. Use the same formatting, heading styles, and organization as shown in the template
+1. Study the reference template above carefully - it shows the exact structure and style to follow.
+2. Use the same formatting, heading styles, and organization as shown in the template.
 3. When generating new release notes:
-   - Follow the same sectioning and hierarchy
-   - Use identical formatting for headings, bullets, and sections
-   - Match the tone and level of detail
-   - Keep consistent with terminology and phrasing patterns
+   - Follow the same sectioning and hierarchy.
+   - Use identical formatting for headings, bullets, and sections.
+   - Match the tone and level of detail.
+   - Keep consistent with terminology and phrasing patterns.
+4. For each function or topic:
+   - Include "Previous State", "New State", and "Customer Benefits".
+   - If the transcript or document mentions the previous state or update, include it.
+   - If there is no mention of the previous state or update, set them to "None".
+5. When multiple transcripts or documents are uploaded, interpret these as individual functions and list them separately.
 
 **Release Notes Structure (Follow Template):**
 - Each function or topic gets a separate point (e.g., Point 1: Integration Enhancement, Point 2: Process Automation)
 - For each point:
-  - "Previous State" (What was before?)
+  - "Previous State" (What was before?) — set to None if not mentioned.
   - "New State" (What's new?)
   - "Customer Benefits"
-- Clear, customer-oriented language
-- When multiple transcripts are uploaded, interpret these as individual functions and list them separately
+- Clear, customer-oriented language.
 
 Now analyze this content and generate release notes following the template structure exactly:
 {content}
 """
+
 
     def _load_template(self) -> str:
         """Load the template content from the data folder"""
@@ -526,7 +533,7 @@ Now analyze this content and generate release notes following the template struc
                 'en': "You are a skilled technical writer specializing in creating clear and concise release notes in English.",
                 'fr': "Vous êtes un rédacteur technique spécialisé dans la création de notes de version claires et concises en français.",
                 'de': "Sie sind ein technischer Redakteur, der sich auf die Erstellung klarer und präziser Release Notes in deutscher Sprache spezialisiert hat.",
-                'es': "Eres un redactor técnico especializado en crear notas de versión claras y concisas en español.",
+                'es': "Eres un redactor técnico especializado en crear notas de versión claras e concisas en español.",
                 'it': "Sei un redattore tecnico specializzato nella creazione di note di rilascio chiare e concise in italiano.",
                 'pt': "Você é um redator técnico especializado em criar notas de versão claras e concisas em português.",
                 'nl': "U bent een technisch schrijver gespecialiseerd in het maken van heldere en beknopte releasenotities in het Nederlands.",
@@ -633,12 +640,13 @@ Now analyze this content and generate release notes following the template struc
     async def _generate_release_notes_internal_combined(self, combined_content: str) -> Tuple[bool, str]:
         """Internal method for generating release notes from combined content"""
         logger.info("Starting async release notes generation for combined content")
-        self.last_token_usage = 0  # Reset token usage counter
+        self.last_token_usage = 0
+        self.context = combined_content
 
         try:
-            # Detect language from combined content
+            # Detect language
+            detected_lang = 'en'  # Default to English
             try:
-                logger.info("Detecting content language")
                 detection_response = await self.async_client.chat.completions.create(
                     model="gpt-3.5-turbo",
                     messages=[
@@ -648,66 +656,71 @@ Now analyze this content and generate release notes following the template struc
                     temperature=0,
                     max_tokens=2
                 )
-                self.last_token_usage += detection_response.usage.total_tokens
-                detected_lang = detection_response.choices[0].message.content.strip().lower()
-                logger.info(f"Detected language: {detected_lang}")
+                if detection_response.choices and detection_response.choices[0].message.content:
+                    detected_lang = detection_response.choices[0].message.content.strip().lower()
+                    logger.info(f"Detected language: {detected_lang}")
             except Exception as e:
                 logger.error(f"Error detecting language: {str(e)}")
-                detected_lang = 'en'  # Default to English if detection fails
 
-            # Define system message based on detected language
-            system_messages = {
-                'en': "You are a skilled technical writer specializing in creating clear and concise release notes in English.",
-                'fr': "Vous êtes un rédacteur technique spécialisé dans la création de notes de version claires et concises en français.",
-                'de': "Sie sind ein technischer Redakteur, der sich auf die Erstellung klarer und präziser Release Notes in deutscher Sprache spezialisiert hat.",
-                'es': "Eres un redactor técnico especializado en crear notas de versión claras e concisas en español.",
-                'it': "Sei un redattore tecnico specializzato nella creazione di note di rilascio chiare e concise in italiano.",
-                'pt': "Você é um redator técnico especializado em criar notas de versão claras e concisas em português.",
-                'nl': "U bent een technisch schrijver gespecialiseerd in het maken van heldere en beknopte releasenotities in het Nederlands.",
-                'pl': "Jesteś doświadczonym redaktorem technicznym specjalizującym się w tworzeniu przejrzystych i zwięzłych notatek o wydaniu w języku polskim."
-            }
+            # Split content into chunks if too long
+            text_chunks = chunk_text(combined_content)
+            release_notes_chunks = []
+            
+            # Use the consistent template to generate each chunk
+            for i, chunk in enumerate(text_chunks):
+                try:
+                    # Use OpenAIAgent's template for consistent formatting
+                    chunk_prompt = self.TEMPLATE.format(
+                        template_content=self.template_content,
+                        content=chunk,
+                        date=datetime.now()
+                    )
 
-            language_instructions = {
-                'en': "Write the release notes in English.",
-                'fr': "Rédigez les notes de version en français.",
-                'de': "Schreiben Sie die Release Notes auf Deutsch.",
-                'es': "Escribe las notas de versión en español.",
-                'it': "Scrivi le note di rilascio in italiano.",
-                'pt': "Escreva as notas di rilascio em português.",
-                'nl': "Schrijf de releasenotities in het Nederlands.",
-                'pl': "Napisz notatkę o wydaniu w języku polskim."
-            }
+                    completion = await self.async_client.chat.completions.create(
+                        model="gpt-4-turbo-preview",
+                        messages=[
+                            {"role": "system", "content": f"{chunk_prompt}\n\nThis is part {i+1} of {len(text_chunks)}. Generate release notes following the template format exactly."},
+                            {"role": "user", "content": "Generate release notes following the template structure exactly."}
+                        ],
+                        temperature=0.7,
+                        presence_penalty=0.1,
+                        frequency_penalty=0.1,
+                        max_tokens=2000
+                    )
 
-            system_message = system_messages.get(detected_lang, system_messages['en'])
-            language_instruction = language_instructions.get(detected_lang, language_instructions['en'])
+                    release_notes_chunks.append(completion.choices[0].message.content or "")
 
-            # Generate release notes
-            try:
-                system_prompt = self.TEMPLATE.format(
-                    template_content=self.template_content,
-                    content=combined_content,
+                except Exception as chunk_error:
+                    logger.error(f"Error processing chunk {i+1}: {str(chunk_error)}")
+                    return False, f"Error processing content chunk {i+1}: {str(chunk_error)}"
+
+            # Combine chunks if multiple exist
+            if len(release_notes_chunks) > 1:
+                final_prompt = self.TEMPLATE.format(
+                    template_content=self.template_content, 
+                    content="\n\n---\n\n".join(release_notes_chunks),
                     date=datetime.now()
                 )
-                system_prompt = f"{system_message}\n\n{language_instruction}\n\n{system_prompt}"
+                
+                try:
+                    combine_response = await self.async_client.chat.completions.create(
+                        model="gpt-4-turbo-preview",
+                        messages=[
+                            {"role": "system", "content": final_prompt},
+                            {"role": "user", "content": "Combine these sections into a single coherent document while maintaining perfect template adherence, keeping all sections, and eliminating redundancy."}
+                        ],
+                        temperature=0.7,
+                        max_tokens=2000
+                    )
+                    result_content = combine_response.choices[0].message.content or ""
+                except Exception as combine_error:
+                    logger.error(f"Error combining chunks: {str(combine_error)}")
+                    return False, f"Error combining content chunks: {str(combine_error)}"
+            else:
+                result_content = release_notes_chunks[0]
 
-                logger.info(f"Calling OpenAI API with detected language: {detected_lang}")
-                response = await self.async_client.chat.completions.create(
-                    model="gpt-4-turbo-preview",
-                    messages=[
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": "Generate release notes from the learned content"}
-                    ],
-                    temperature=0.7,
-                    presence_penalty=0.1,
-                    frequency_penalty=0.1,
-                    max_tokens=2000
-                )
-                self.last_token_usage += response.usage.total_tokens
-                logger.info("Successfully generated release notes")
-                return True, response.choices[0].message.content
-            except Exception as api_error:
-                logger.error(f"OpenAI API error: {str(api_error)}")
-                return False, f"OpenAI API error: {str(api_error)}"
+            logger.info("Successfully generated release notes")
+            return True, result_content
 
         except Exception as e:
             logger.error(f"Unexpected error in generate_release_notes_async: {str(e)}")

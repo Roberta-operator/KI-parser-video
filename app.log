@@ -184,3 +184,557 @@
 2025-06-09 14:45:17,930 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-06-09 14:45:17,934 - app.utils.openai_agent - INFO - Successfully generated release notes
 2025-06-09 14:45:17,934 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-11 12:50:29,190 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
+2025-06-11 12:50:29,190 - app.routes.generate - INFO - File size: 0.10MB
+2025-06-11 12:50:29,190 - app.routes.generate - INFO - File extension: pdf
+2025-06-11 12:50:29,190 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-11 12:50:29,972 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 12:50:29,972 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-11 12:50:29,972 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-11 12:50:29,972 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-11 12:50:29,972 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-06-11 12:50:29,984 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
+2025-06-11 12:50:29,984 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-11 12:50:29,985 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 12:50:29,985 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 12:50:29,985 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 12:50:29,985 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-11 12:50:31,120 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 12:50:31,125 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 12:50:31,125 - app.utils.openai_agent - INFO - Calling OpenAI API with detected language: en
+2025-06-11 12:50:51,658 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 12:50:51,659 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 12:50:51,659 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-11 13:06:25,839 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 13:06:27,373 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 13:06:27,373 - app.utils.openai_agent - INFO - Processing file with extension: 
+2025-06-11 13:06:27,373 - app.utils.openai_agent - WARNING - Unsupported file type: 
+2025-06-11 13:06:27,373 - app.utils.openai_agent - ERROR - Failed to process file: t
+2025-06-11 13:07:55,982 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 13:07:56,831 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 13:07:56,832 - app.utils.openai_agent - INFO - Processing file with extension: 
+2025-06-11 13:07:56,832 - app.utils.openai_agent - WARNING - Unsupported file type: 
+2025-06-11 13:07:56,832 - app.utils.openai_agent - ERROR - Failed to process file: t
+2025-06-11 13:12:02,559 - app.utils.file_processor - INFO - Valid video format: mp4
+2025-06-11 13:12:02,567 - app.utils.file_processor - INFO - Sanitized filename: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:12:02,571 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:12:02,571 - app.utils.file_processor - INFO - Processing video file: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:12:02,580 - app.utils.file_processor - INFO - Starting transcription with Whisper model
+2025-06-11 13:12:09,317 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 13:12:09,318 - app.utils.file_processor - INFO - Successfully generated transcript
+2025-06-11 13:12:10,239 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 13:12:10,239 - app.utils.openai_agent - INFO - Processing file with extension: 
+2025-06-11 13:12:10,239 - app.utils.openai_agent - WARNING - Unsupported file type: 
+2025-06-11 13:12:10,239 - app.utils.openai_agent - ERROR - Failed to process file: t
+2025-06-11 13:20:08,224 - app.routes.upload - INFO - Received video upload request for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:20:08,224 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 13:20:08,224 - app.utils.file_processor - INFO - Validating video format for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:20:08,224 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 13:20:08,224 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 13:20:08,224 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 13:20:08,230 - app.routes.upload - INFO - File size in memory: 13565815 bytes
+2025-06-11 13:20:08,235 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 13:20:08,236 - app.utils.file_processor - INFO - Saving video file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:20:08,236 - app.utils.file_processor - INFO - Saving to path: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:20:08,236 - app.utils.file_processor - INFO - File content size: 13565815 bytes
+2025-06-11 13:20:08,240 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:20:08,240 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 13:20:08,241 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:20:08,241 - app.utils.file_processor - INFO - Video file size: 13565815 bytes
+2025-06-11 13:20:08,250 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 13:20:15,020 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 13:20:15,020 - app.utils.file_processor - INFO - Successfully generated transcript of length: 815
+2025-06-11 13:20:15,020 - app.routes.upload - INFO - Generating release notes from transcript
+2025-06-11 13:20:15,583 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 13:20:15,583 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 13:20:15,584 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 13:20:15,584 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 13:20:15,584 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-11 13:20:16,394 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 13:20:16,400 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 13:20:16,403 - app.utils.openai_agent - INFO - Calling OpenAI API with detected language: en
+2025-06-11 13:20:39,070 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 13:20:39,071 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 13:20:39,071 - app.routes.upload - INFO - Cleaning up temporary files
+2025-06-11 13:20:39,074 - app.routes.upload - INFO - Video processing completed successfully
+2025-06-11 13:21:04,866 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
+2025-06-11 13:21:04,866 - app.routes.generate - INFO - File size: 0.10MB
+2025-06-11 13:21:04,866 - app.routes.generate - INFO - File extension: pdf
+2025-06-11 13:21:04,866 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-11 13:21:05,471 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 13:21:05,471 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-11 13:21:05,471 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-11 13:21:05,471 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-11 13:21:05,471 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-06-11 13:21:05,477 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
+2025-06-11 13:21:05,477 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-11 13:21:05,478 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 13:21:05,478 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 13:21:05,478 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 13:21:05,478 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-11 13:21:06,092 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 13:21:06,093 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 13:21:06,093 - app.utils.openai_agent - INFO - Calling OpenAI API with detected language: en
+2025-06-11 13:21:31,579 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 13:21:31,580 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 13:21:31,580 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-11 13:39:54,266 - app.routes.upload - INFO - Received video upload request for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:39:54,267 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 13:39:54,267 - app.utils.file_processor - INFO - Validating video format for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:39:54,267 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 13:39:54,267 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 13:39:54,267 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 13:39:54,272 - app.routes.upload - INFO - File size in memory: 13565815 bytes
+2025-06-11 13:39:54,275 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 13:39:54,276 - app.utils.file_processor - INFO - Saving video file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:39:54,276 - app.utils.file_processor - INFO - Saving to path: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:39:54,276 - app.utils.file_processor - INFO - File content size: 13565815 bytes
+2025-06-11 13:39:54,280 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:39:54,280 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 13:39:54,280 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:39:54,280 - app.utils.file_processor - INFO - Video file size: 13565815 bytes
+2025-06-11 13:39:54,288 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 13:40:15,957 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 13:40:15,957 - app.utils.file_processor - INFO - Successfully generated transcript of length: 816
+2025-06-11 13:40:15,957 - app.routes.upload - INFO - Generating release notes from transcript
+2025-06-11 13:40:16,581 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 13:40:16,581 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 13:40:16,581 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 13:40:16,581 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 13:40:17,193 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 13:40:17,197 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 13:40:17,197 - app.utils.openai_agent - INFO - Calling OpenAI API with detected language: en
+2025-06-11 13:40:39,732 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 13:40:39,746 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 13:40:39,746 - app.routes.upload - INFO - Cleaning up temporary files
+2025-06-11 13:40:39,748 - app.routes.upload - INFO - Video processing completed successfully
+2025-06-11 13:54:27,845 - app.routes.upload - INFO - Received video upload request for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:54:27,849 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 13:54:27,849 - app.utils.file_processor - INFO - Validating video format for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:54:27,849 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 13:54:27,849 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 13:54:27,849 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 13:54:27,854 - app.routes.upload - INFO - File size in memory: 13565815 bytes
+2025-06-11 13:54:27,858 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 13:54:27,858 - app.utils.file_processor - INFO - Saving video file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:54:27,860 - app.utils.file_processor - INFO - Saving to path: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:54:27,860 - app.utils.file_processor - INFO - File content size: 13565815 bytes
+2025-06-11 13:54:27,864 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:54:27,864 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 13:54:27,864 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 13:54:27,864 - app.utils.file_processor - INFO - Video file size: 13565815 bytes
+2025-06-11 13:54:27,872 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 13:54:47,088 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 13:54:47,091 - app.utils.file_processor - INFO - Successfully generated transcript of length: 816
+2025-06-11 13:54:47,091 - app.routes.upload - INFO - Generating release notes from transcript
+2025-06-11 13:54:47,671 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 13:54:47,672 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 13:54:47,672 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 13:54:47,672 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 13:54:49,209 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 13:54:49,221 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 13:55:10,378 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 13:55:10,387 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 13:55:10,387 - app.routes.upload - INFO - Cleaning up temporary files
+2025-06-11 13:55:10,389 - app.routes.upload - INFO - Video processing completed successfully
+2025-06-11 14:06:06,578 - app.routes.upload - INFO - Received video upload request for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:06:06,578 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 14:06:06,578 - app.utils.file_processor - INFO - Validating video format for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:06:06,578 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 14:06:06,578 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 14:06:06,578 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 14:06:06,583 - app.routes.upload - INFO - File size in memory: 13565815 bytes
+2025-06-11 14:06:06,588 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 14:06:06,588 - app.utils.file_processor - INFO - Saving video file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:06:06,589 - app.utils.file_processor - INFO - Saving to path: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:06:06,589 - app.utils.file_processor - INFO - File content size: 13565815 bytes
+2025-06-11 14:06:06,594 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:06:06,594 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 14:06:06,594 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:06:06,594 - app.utils.file_processor - INFO - Video file size: 13565815 bytes
+2025-06-11 14:06:06,604 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 14:06:15,036 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 14:06:15,036 - app.utils.file_processor - INFO - Successfully generated transcript of length: 816
+2025-06-11 14:06:15,036 - app.routes.upload - INFO - Generating release notes from transcript
+2025-06-11 14:06:15,965 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 14:06:15,965 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 14:06:15,965 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 14:06:15,965 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 14:06:16,429 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:06:16,432 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 14:06:36,362 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:06:36,363 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 14:06:36,363 - app.routes.upload - INFO - Cleaning up temporary files
+2025-06-11 14:06:36,364 - app.routes.upload - INFO - Video processing completed successfully
+2025-06-11 14:22:01,810 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
+2025-06-11 14:22:01,810 - app.routes.generate - INFO - File size: 0.10MB
+2025-06-11 14:22:01,810 - app.routes.generate - INFO - File extension: pdf
+2025-06-11 14:22:01,810 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-11 14:22:02,704 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 14:22:02,704 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-11 14:22:02,704 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-11 14:22:02,704 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-11 14:22:02,729 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-06-11 14:22:02,745 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
+2025-06-11 14:22:02,745 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-11 14:22:02,745 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 14:22:02,745 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 14:22:02,746 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 14:22:02,746 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-11 14:22:04,072 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:22:04,076 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 14:22:26,262 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:22:26,265 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 14:22:26,265 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-11 14:22:58,872 - app.routes.upload - INFO - Received video upload request for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:22:58,872 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 14:22:58,872 - app.utils.file_processor - INFO - Validating video format for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:22:58,872 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 14:22:58,872 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 14:22:58,872 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 14:22:58,878 - app.routes.upload - INFO - File size in memory: 13565815 bytes
+2025-06-11 14:22:58,883 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 14:22:58,883 - app.utils.file_processor - INFO - Saving video file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:22:58,883 - app.utils.file_processor - INFO - Saving to path: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:22:58,883 - app.utils.file_processor - INFO - File content size: 13565815 bytes
+2025-06-11 14:22:58,888 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:22:58,888 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 14:22:58,889 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:22:58,889 - app.utils.file_processor - INFO - Video file size: 13565815 bytes
+2025-06-11 14:22:58,897 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 14:23:18,825 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 14:23:18,848 - app.utils.file_processor - INFO - Successfully generated transcript of length: 815
+2025-06-11 14:23:18,848 - app.routes.upload - INFO - Generating release notes from transcript
+2025-06-11 14:23:19,413 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 14:23:19,413 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 14:23:19,413 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 14:23:19,413 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 14:23:19,413 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-11 14:23:19,999 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:23:20,001 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 14:23:29,930 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:23:29,931 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 14:23:29,931 - app.routes.upload - INFO - Cleaning up temporary files
+2025-06-11 14:23:29,933 - app.routes.upload - INFO - Video processing completed successfully
+2025-06-11 14:32:44,330 - app.routes.upload - INFO - Received video upload request for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:32:44,330 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 14:32:44,330 - app.utils.file_processor - INFO - Validating video format for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:32:44,330 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 14:32:44,330 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 14:32:44,330 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 14:32:44,336 - app.routes.upload - INFO - File size in memory: 13565815 bytes
+2025-06-11 14:32:44,340 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 14:32:44,341 - app.utils.file_processor - INFO - Saving video file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:32:44,341 - app.utils.file_processor - INFO - Saving to path: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:32:44,341 - app.utils.file_processor - INFO - File content size: 13565815 bytes
+2025-06-11 14:32:44,345 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:32:44,345 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 14:32:44,345 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:32:44,345 - app.utils.file_processor - INFO - Video file size: 13565815 bytes
+2025-06-11 14:32:44,354 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 14:32:57,316 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 14:32:57,317 - app.utils.file_processor - INFO - Successfully generated transcript of length: 816
+2025-06-11 14:32:57,318 - app.routes.upload - INFO - Generating release notes from transcript
+2025-06-11 14:32:58,033 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 14:32:58,033 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 14:32:58,033 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 14:32:58,033 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 14:32:58,033 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-11 14:32:58,811 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:32:58,815 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 14:33:11,680 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:33:11,681 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 14:33:11,681 - app.routes.upload - INFO - Cleaning up temporary files
+2025-06-11 14:33:11,683 - app.routes.upload - INFO - Video processing completed successfully
+2025-06-11 14:39:22,940 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
+2025-06-11 14:39:22,940 - app.routes.generate - INFO - File size: 0.10MB
+2025-06-11 14:39:22,940 - app.routes.generate - INFO - File extension: pdf
+2025-06-11 14:39:22,940 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-11 14:39:22,942 - app.routes.generate - INFO - Generating release notes from files
+2025-06-11 14:39:23,541 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 14:39:23,541 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-11 14:39:23,541 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-11 14:39:23,541 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-11 14:39:23,541 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-06-11 14:39:23,547 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
+2025-06-11 14:39:23,547 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 14:39:23,547 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-11 14:39:24,238 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:39:24,239 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 14:39:40,501 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:39:40,513 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 14:39:40,513 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-11 14:48:14,326 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
+2025-06-11 14:48:14,326 - app.routes.generate - INFO - File size: 0.10MB
+2025-06-11 14:48:14,326 - app.routes.generate - INFO - File extension: pdf
+2025-06-11 14:48:14,327 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-11 14:48:15,034 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 14:48:15,035 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-11 14:48:15,035 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-11 14:48:15,035 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-11 14:48:15,035 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-06-11 14:48:15,041 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
+2025-06-11 14:48:15,041 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-11 14:48:15,041 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 14:48:15,041 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 14:48:15,041 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 14:48:15,041 - app.utils.openai_agent - INFO - Detecting content language
+2025-06-11 14:48:16,830 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:48:16,836 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 14:48:35,072 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:48:35,095 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 14:48:35,096 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-11 14:51:35,769 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
+2025-06-11 14:51:35,769 - app.routes.generate - INFO - File size: 0.10MB
+2025-06-11 14:51:35,769 - app.routes.generate - INFO - File extension: pdf
+2025-06-11 14:51:35,769 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-11 14:51:36,348 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 14:51:36,348 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-11 14:51:36,348 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-11 14:51:36,348 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-11 14:51:36,348 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-06-11 14:51:36,354 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
+2025-06-11 14:51:36,355 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-11 14:51:36,355 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 14:51:36,355 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 14:51:36,355 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 14:51:37,134 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:51:37,137 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 14:51:52,581 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:51:52,595 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 14:51:52,595 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-11 14:52:08,713 - app.routes.upload - INFO - Received video upload request for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:52:08,713 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 14:52:08,713 - app.utils.file_processor - INFO - Validating video format for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:52:08,713 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 14:52:08,713 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 14:52:08,713 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 14:52:08,718 - app.routes.upload - INFO - File size in memory: 13565815 bytes
+2025-06-11 14:52:08,722 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 14:52:08,722 - app.utils.file_processor - INFO - Saving video file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:52:08,723 - app.utils.file_processor - INFO - Saving to path: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:52:08,723 - app.utils.file_processor - INFO - File content size: 13565815 bytes
+2025-06-11 14:52:08,727 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:52:08,727 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 14:52:08,727 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:52:08,727 - app.utils.file_processor - INFO - Video file size: 13565815 bytes
+2025-06-11 14:52:08,737 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 14:52:15,749 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 14:52:15,750 - app.utils.file_processor - INFO - Successfully generated transcript of length: 816
+2025-06-11 14:52:15,751 - app.routes.upload - INFO - Generating release notes from transcript
+2025-06-11 14:52:16,614 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 14:52:16,614 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 14:52:16,614 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 14:52:16,614 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 14:52:17,224 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:52:17,294 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 14:52:36,604 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:52:36,605 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 14:52:36,605 - app.routes.upload - INFO - Cleaning up temporary files
+2025-06-11 14:52:36,607 - app.routes.upload - INFO - Video processing completed successfully
+2025-06-11 14:56:00,753 - app.routes.upload - INFO - Received video upload request for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:56:00,753 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 14:56:00,753 - app.utils.file_processor - INFO - Validating video format for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:56:00,753 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 14:56:00,753 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 14:56:00,753 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 14:56:00,759 - app.routes.upload - INFO - File size in memory: 13565815 bytes
+2025-06-11 14:56:00,764 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 14:56:00,764 - app.utils.file_processor - INFO - Saving video file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:56:00,764 - app.utils.file_processor - INFO - Saving to path: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:56:00,764 - app.utils.file_processor - INFO - File content size: 13565815 bytes
+2025-06-11 14:56:00,770 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:56:00,770 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 14:56:00,770 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:56:00,770 - app.utils.file_processor - INFO - Video file size: 13565815 bytes
+2025-06-11 14:56:00,781 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 14:56:09,412 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 14:56:09,413 - app.utils.file_processor - INFO - Successfully generated transcript of length: 816
+2025-06-11 14:56:09,413 - app.routes.upload - INFO - Generating release notes from transcript
+2025-06-11 14:56:09,986 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 14:56:09,986 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 14:56:09,986 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 14:56:09,986 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 14:56:10,780 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:56:10,783 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 14:56:26,146 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:56:26,147 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 14:56:26,148 - app.routes.upload - INFO - Cleaning up temporary files
+2025-06-11 14:56:26,150 - app.routes.upload - INFO - Video processing completed successfully
+2025-06-11 14:56:55,853 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
+2025-06-11 14:56:55,853 - app.routes.generate - INFO - File size: 0.10MB
+2025-06-11 14:56:55,854 - app.routes.generate - INFO - File extension: pdf
+2025-06-11 14:56:55,854 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-11 14:56:56,639 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 14:56:56,639 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-11 14:56:56,639 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-11 14:56:56,639 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-11 14:56:56,640 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-06-11 14:56:56,649 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
+2025-06-11 14:56:56,649 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-11 14:56:56,649 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 14:56:56,649 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 14:56:56,649 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 14:56:57,381 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:56:57,382 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 14:57:19,101 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:57:19,102 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 14:57:19,102 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-11 14:57:55,491 - app.routes.upload - INFO - Received video upload request for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:57:55,492 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 14:57:55,492 - app.utils.file_processor - INFO - Validating video format for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:57:55,492 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 14:57:55,492 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 14:57:55,492 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 14:57:55,497 - app.routes.upload - INFO - File size in memory: 13565815 bytes
+2025-06-11 14:57:55,501 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 14:57:55,501 - app.utils.file_processor - INFO - Saving video file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:57:55,501 - app.utils.file_processor - INFO - Saving to path: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:57:55,501 - app.utils.file_processor - INFO - File content size: 13565815 bytes
+2025-06-11 14:57:55,505 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:57:55,505 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 14:57:55,505 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 14:57:55,505 - app.utils.file_processor - INFO - Video file size: 13565815 bytes
+2025-06-11 14:57:55,513 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 14:58:01,730 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 14:58:01,731 - app.utils.file_processor - INFO - Successfully generated transcript of length: 816
+2025-06-11 14:58:01,731 - app.routes.upload - INFO - Generating release notes from transcript
+2025-06-11 14:58:02,543 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 14:58:02,543 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 14:58:02,544 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 14:58:02,544 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 14:58:03,446 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:58:03,451 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 14:58:22,997 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 14:58:22,998 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 14:58:22,998 - app.routes.upload - INFO - Cleaning up temporary files
+2025-06-11 14:58:23,000 - app.routes.upload - INFO - Video processing completed successfully
+2025-06-11 15:00:03,471 - app.routes.upload - INFO - Received video upload request for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 15:00:03,471 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 15:00:03,471 - app.utils.file_processor - INFO - Validating video format for file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 15:00:03,471 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 15:00:03,471 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 15:00:03,471 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 15:00:03,476 - app.routes.upload - INFO - File size in memory: 13565815 bytes
+2025-06-11 15:00:03,479 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 15:00:03,479 - app.utils.file_processor - INFO - Saving video file: Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 15:00:03,480 - app.utils.file_processor - INFO - Saving to path: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 15:00:03,480 - app.utils.file_processor - INFO - File content size: 13565815 bytes
+2025-06-11 15:00:03,483 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 15:00:03,483 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 15:00:03,484 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\Introducing iPhone 16 Pro \uff5c Apple (online-video-cutter.com).mp4
+2025-06-11 15:00:03,484 - app.utils.file_processor - INFO - Video file size: 13565815 bytes
+2025-06-11 15:00:03,492 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 15:00:11,315 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 15:00:11,316 - app.utils.file_processor - INFO - Successfully generated transcript of length: 816
+2025-06-11 15:00:11,316 - app.routes.upload - INFO - Generating release notes from transcript
+2025-06-11 15:00:12,200 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 15:00:12,200 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 15:00:12,200 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 15:00:12,200 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 15:00:12,712 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 15:00:12,716 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 15:00:30,351 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 15:00:30,391 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 15:00:30,391 - app.routes.upload - INFO - Cleaning up temporary files
+2025-06-11 15:00:30,395 - app.routes.upload - INFO - Video processing completed successfully
+2025-06-11 15:05:00,518 - app.routes.generate - INFO - Starting to process file: Plug&Plai.pdf
+2025-06-11 15:05:00,519 - app.routes.generate - INFO - File size: 0.10MB
+2025-06-11 15:05:00,519 - app.routes.generate - INFO - File extension: pdf
+2025-06-11 15:05:00,519 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-11 15:05:01,364 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 15:05:01,364 - app.utils.openai_agent - INFO - Processing file with extension: pdf
+2025-06-11 15:05:01,364 - app.utils.openai_agent - INFO - Extracting text from PDF
+2025-06-11 15:05:01,364 - app.utils.openai_agent - INFO - Starting PDF text extraction
+2025-06-11 15:05:01,365 - app.utils.openai_agent - INFO - PDF has 2 pages
+2025-06-11 15:05:01,375 - app.utils.openai_agent - INFO - Successfully extracted 3225 characters from PDF
+2025-06-11 15:05:01,375 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-11 15:05:01,376 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 15:05:01,376 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 15:05:01,376 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 15:05:01,835 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 15:05:01,836 - app.utils.openai_agent - INFO - Detected language: en
+2025-06-11 15:05:29,332 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 15:05:29,333 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 15:05:29,333 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-11 15:09:40,834 - app.routes.upload - INFO - Received video upload request for file: Inbound-Assistenten-Template-Auswahl.mp4
+2025-06-11 15:09:40,835 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 15:09:40,835 - app.utils.file_processor - INFO - Validating video format for file: Inbound-Assistenten-Template-Auswahl.mp4
+2025-06-11 15:09:40,835 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 15:09:40,835 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 15:09:40,835 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 15:09:40,849 - app.routes.upload - INFO - File size in memory: 33094983 bytes
+2025-06-11 15:09:40,859 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 15:09:40,859 - app.utils.file_processor - INFO - Saving video file: Inbound-Assistenten-Template-Auswahl.mp4
+2025-06-11 15:09:40,859 - app.utils.file_processor - INFO - Saving to path: temp_videos\Inbound-Assistenten-Template-Auswahl.mp4
+2025-06-11 15:09:40,859 - app.utils.file_processor - INFO - File content size: 33094983 bytes
+2025-06-11 15:09:41,143 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\Inbound-Assistenten-Template-Auswahl.mp4
+2025-06-11 15:09:41,143 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 15:09:41,143 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\Inbound-Assistenten-Template-Auswahl.mp4
+2025-06-11 15:09:41,143 - app.utils.file_processor - INFO - Video file size: 33094983 bytes
+2025-06-11 15:09:41,152 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 15:09:55,040 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 413 Payload Too Large"
+2025-06-11 15:09:55,041 - app.utils.file_processor - ERROR - OpenAI API error: Error code: 413 - {'error': {'message': '413: Maximum content size limit (26214400) exceeded (26390202 bytes read)', 'type': 'server_error', 'param': None, 'code': None}}
+2025-06-11 15:09:55,041 - app.routes.upload - ERROR - Failed to generate transcript: OpenAI API error: Error code: 413 - {'error': {'message': '413: Maximum content size limit (26214400) exceeded (26390202 bytes read)', 'type': 'server_error', 'param': None, 'code': None}}
+2025-06-11 15:09:55,041 - app.routes.upload - ERROR - Unexpected error processing video: 500: OpenAI API error: Error code: 413 - {'error': {'message': '413: Maximum content size limit (26214400) exceeded (26390202 bytes read)', 'type': 'server_error', 'param': None, 'code': None}}
+2025-06-11 15:12:54,798 - app.routes.upload - INFO - Received video upload request for file: inbound-assistenten-template-auswahl_XnE3WUy0.mp4
+2025-06-11 15:12:54,798 - app.routes.upload - INFO - File content type: video/mp4
+2025-06-11 15:12:54,798 - app.utils.file_processor - INFO - Validating video format for file: inbound-assistenten-template-auswahl_XnE3WUy0.mp4
+2025-06-11 15:12:54,798 - app.utils.file_processor - INFO - Detected file extension: mp4
+2025-06-11 15:12:54,799 - app.utils.file_processor - INFO - Valid video format detected: mp4
+2025-06-11 15:12:54,799 - app.routes.upload - INFO - Reading file into memory
+2025-06-11 15:12:54,803 - app.routes.upload - INFO - File size in memory: 8752138 bytes
+2025-06-11 15:12:54,805 - app.routes.upload - INFO - Saving video to temporary location
+2025-06-11 15:12:54,805 - app.utils.file_processor - INFO - Saving video file: inbound-assistenten-template-auswahl_XnE3WUy0.mp4
+2025-06-11 15:12:54,806 - app.utils.file_processor - INFO - Saving to path: temp_videos\inbound-assistenten-template-auswahl_XnE3WUy0.mp4
+2025-06-11 15:12:54,806 - app.utils.file_processor - INFO - File content size: 8752138 bytes
+2025-06-11 15:12:54,809 - app.utils.file_processor - INFO - Successfully saved video to: temp_videos\inbound-assistenten-template-auswahl_XnE3WUy0.mp4
+2025-06-11 15:12:54,809 - app.routes.upload - INFO - Processing video for transcript
+2025-06-11 15:12:54,809 - app.utils.file_processor - INFO - Starting to process video file: temp_videos\inbound-assistenten-template-auswahl_XnE3WUy0.mp4
+2025-06-11 15:12:54,809 - app.utils.file_processor - INFO - Video file size: 8752138 bytes
+2025-06-11 15:12:54,818 - app.utils.file_processor - INFO - Sending video to OpenAI Whisper API
+2025-06-11 15:13:10,406 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+2025-06-11 15:13:10,407 - app.utils.file_processor - INFO - Successfully generated transcript of length: 1776
+2025-06-11 15:13:10,407 - app.routes.upload - INFO - Generating release notes from transcript
+2025-06-11 15:13:11,072 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 15:13:11,072 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 15:13:11,072 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 15:13:11,072 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 15:13:11,652 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 15:13:11,653 - app.utils.openai_agent - INFO - Detected language: de
+2025-06-11 15:13:29,998 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 15:13:30,000 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 15:13:30,000 - app.routes.upload - INFO - Cleaning up temporary files
+2025-06-11 15:13:30,001 - app.routes.upload - INFO - Video processing completed successfully
+2025-06-11 15:22:08,507 - app.routes.generate - INFO - Starting to process file: unterschied_frage_anrufgrund.txt
+2025-06-11 15:22:08,507 - app.routes.generate - INFO - File size: 0.00MB
+2025-06-11 15:22:08,507 - app.routes.generate - INFO - File extension: txt
+2025-06-11 15:22:08,507 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-11 15:22:09,421 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 15:22:09,421 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 15:22:09,421 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 15:22:09,421 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-11 15:22:09,421 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 15:22:09,421 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 15:22:09,421 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 15:22:10,499 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 15:22:10,500 - app.utils.openai_agent - INFO - Detected language: de
+2025-06-11 15:22:26,645 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 15:22:26,655 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 15:22:26,655 - app.routes.generate - INFO - Successfully generated release notes
+2025-06-11 15:22:44,838 - app.routes.generate - INFO - Starting to process file: unterschied_frage_anrufgrund.txt
+2025-06-11 15:22:44,838 - app.routes.generate - INFO - File size: 0.00MB
+2025-06-11 15:22:44,838 - app.routes.generate - INFO - File extension: txt
+2025-06-11 15:22:44,838 - app.routes.generate - INFO - Creating memory copy of file
+2025-06-11 15:22:45,731 - app.utils.openai_agent - INFO - Successfully loaded template content
+2025-06-11 15:22:45,731 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 15:22:45,731 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 15:22:45,731 - app.routes.generate - INFO - Generating release notes from combined content
+2025-06-11 15:22:45,731 - app.utils.openai_agent - INFO - Processing file with extension: txt
+2025-06-11 15:22:45,731 - app.utils.openai_agent - INFO - Extracting text from TXT
+2025-06-11 15:22:45,731 - app.utils.openai_agent - INFO - Starting async release notes generation for combined content
+2025-06-11 15:22:46,586 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 15:22:46,587 - app.utils.openai_agent - INFO - Detected language: de
+2025-06-11 15:23:08,224 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-11 15:23:08,225 - app.utils.openai_agent - INFO - Successfully generated release notes
+2025-06-11 15:23:08,225 - app.routes.generate - INFO - Successfully generated release notes

@@ -13,7 +13,7 @@ import time
 logger = logging.getLogger(__name__)
 
 # Constants
-API_URL = "http://127.0.0.1:8000/health"
+API_URL = "https://ki-parser-video.fly.dev"
 MAX_FILE_SIZE_MB = {
     'document': 100,  # 100MB limit for documents
     'media': 1000     # 1000MB limit for media files
@@ -112,7 +112,7 @@ div[data-testid="stVerticalBlock"] > div {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
 }
 
-/* Release notes */
+/* Release notes and transcript */
 .release-notes {
     width: 100% !important;
     margin: 0 !important;
@@ -173,57 +173,77 @@ div[data-testid="stVerticalBlock"] > div {
 div[data-testid="stHorizontalBlock"] {
     width: 800px !important;
 }
+
+/* Text area styling */
+.stTextArea > div {
+    width: 800px !important;
+}
+.stTextArea textarea {
+    color: #2C3E50 !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    background: #f8f9fa !important;
+}
+
+/* Expander styling */
+.streamlit-expander {
+    width: 800px !important;
+    border-radius: 10px !important;
+    border: 1px solid #e0e0e0 !important;
+    margin: 1rem 0 !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
 # Configure requests session with retry logic
 def create_requests_session():
+    """Create a requests session with retry logic"""
     session = requests.Session()
-    retries = Retry(
-        total=3,
-        backoff_factor=1,
-        status_forcelist=[500, 502, 503, 504],
+    retry_strategy = Retry(
+        total=3,  # number of retries
+        status_forcelist=[429, 500, 502, 503, 504],  # HTTP status codes to retry on
+        allowed_methods=["HEAD", "GET", "PUT", "POST", "DELETE", "OPTIONS", "TRACE"],
+        backoff_factor=1  # factor to apply between attempts
     )
-    session.mount('http://', HTTPAdapter(max_retries=retries))
-    session.mount('https://', HTTPAdapter(max_retries=retries))
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
     return session
 
 def handle_api_request(method, endpoint, **kwargs):
     """Handle API requests with proper error handling and retry logic"""
-    session = create_requests_session()
     try:
-        kwargs['timeout'] = 90  # 90 seconds timeout for generation
-        response = session.request(
-            method,
-            f"http://127.0.0.1:8000{endpoint}",
-            **kwargs
-        )
-        response.raise_for_status()
+        session = create_requests_session()
+        url = f"{API_URL}{endpoint}"
+        response = session.request(method, url, **kwargs)
         
-        if response.content:
-            try:
-                return response.json()
-            except ValueError as e:
-                logger.error(f"Failed to parse JSON from response: {response.content}")
-                st.error("Received invalid response from server. Please try again.")
-                return None
-        else:
-            logger.error("Received empty response from server")
-            st.error("Received empty response from server. Please try again.")
+        if response.status_code == 404:
+            st.error("⚠️ The server endpoint was not found. Please check if the service is available.")
             return None
-            
-    except requests.exceptions.Timeout:
-        logger.error(f"Request timed out for endpoint: {endpoint}")
-        st.error("The release notes generation is taking longer than expected. Please try again or try with a smaller file.")
-    except requests.exceptions.ConnectionError:
-        logger.error(f"Connection failed for endpoint: {endpoint}")
-        st.error("Cannot connect to the server. Please check if the FastAPI backend is running (uvicorn app.main:app --reload)")
-    except requests.exceptions.RequestException as e:
-        logger.error(f"API request failed: {str(e)}")
-        st.error(f"An error occurred: {str(e)}")
-    return None
+        elif response.status_code in [500, 502, 503, 504]:
+            st.error("⚠️ The server is currently experiencing issues. Please try again later.")
+            return None
+        elif response.status_code != 200:
+            st.error(f"⚠️ Error: {response.status_code} - {response.text}")
+            return None
 
-def generate_descriptive_filename(response, input_files: list = None) -> str:
+        return response.json()
+    except requests.exceptions.ConnectionError:
+        st.error("⚠️ Could not connect to the server. Please check your internet connection or try again later.")
+        return None
+    except requests.exceptions.Timeout:
+        st.error("⚠️ The request timed out. Please try again.")
+        return None
+    except requests.exceptions.RequestException as e:
+        st.error(f"⚠️ An error occurred: {str(e)}")
+        return None
+    except Exception as e:
+        st.error(f"⚠️ Unexpected error: {str(e)}")
+        return None
+
+from typing import Optional
+
+def generate_descriptive_filename(response, input_files: Optional[list] = None) -> str:
     """Generate a descriptive filename for release notes based on content and input files.
     
     Args:
@@ -517,29 +537,35 @@ def main():
             Maximum file size: **{MAX_FILE_SIZE_MB['media']}MB**
             """)
             
-            media_file = st.file_uploader(
+            media_files = st.file_uploader(
                 "Drop your video here or click to browse",
                 type=['mp4', 'mpeg', 'm4v', 'mov', 'avi', 'wmv'],
-                accept_multiple_files=False
+                accept_multiple_files=True
             )
             
-            if media_file:
+            if media_files:
                 st.markdown("---")
                 with st.container():
-                    col1, col2, col3 = st.columns([2, 1, 1])
-                    with col1:
-                        st.markdown(f"**Selected file**: {media_file.name}")
-                    with col2:
-                        size = format_size(media_file.size)
-                        if (error := check_file_size(media_file, 'media')) is None:
-                            st.markdown(f"**Size**: ✅ {size}")
-                    with col3:
-                        if error is None:
-                            if st.button("🚀 Generate Notes", key="media_button", use_container_width=True):
+                    for media_file in media_files:
+                        col1, col2, col3 = st.columns([2, 1, 1])
+                        with col1:
+                            st.markdown(f"**Selected file**: {media_file.name}")
+                        with col2:
+                            size = format_size(media_file.size)
+                            if (error := check_file_size(media_file, 'media')) is None:
+                                st.markdown(f"**Size**: ✅ {size}")
+                        with col3:
+                            if error is None:
+                                st.markdown("**Status**: Ready to process")
+                            else:
+                                st.markdown(f"**Status**: ❌ {error}")
+
+                    if st.button("🚀 Generate Notes", key="media_button", use_container_width=True):
+                        for media_file in media_files:
+                            if (error := check_file_size(media_file, 'media')) is None:
                                 try:
-                                    # ...existing code for media processing...
                                     start_time = time.time()
-                                    progress_bar, status_text, time_remaining = display_processing_status(1)
+                                    progress_bar, status_text, time_remaining = display_processing_status(len(media_files))
                                     
                                     # Update progress indicators
                                     progress_bar.progress(0.3)
@@ -561,17 +587,24 @@ def main():
                                             time_remaining.text(f"Total time: {int(time.time() - start_time)}s")
                                             st.success(f"✅ Successfully processed {media_file.name}")
                                             
-                                # Create a response object that matches our expected format
+                                            # Create a response object that matches our expected format
                                             notes_response = {
+                                                "success": True,
                                                 "content": response["release_notes"],
-                                                "token_usage": response.get("token_usage", 0)  # Include token usage if available
+                                                "token_usage": response.get("token_usage", 0)
                                             }
-                                            # Display stats and open release notes in a new container
+                                            
+                                            # Display stats and release notes in a new container
                                             display_release_notes(notes_response, [media_file])
                                             
-                                            # Show transcript in expandable section below
+                                            # Show transcript in expandable section with consistent styling
                                             with st.expander("📝 View Original Transcript", expanded=False):
+                                                st.markdown("""
+                                                <div class="content-container">
+                                                    <div class="release-notes">
+                                                """, unsafe_allow_html=True)
                                                 st.text_area("Full Transcript", response["transcript"], height=200)
+                                                st.markdown("</div></div>", unsafe_allow_html=True)
                                         else:
                                             error_msg = response.get("detail", "Unknown error") if response else "Failed to get response"
                                             st.error(f"Failed to process {media_file.name}: {error_msg}")
@@ -584,9 +617,9 @@ def main():
                                     progress_bar.empty()
                                     status_text.empty()
                                     time_remaining.empty()
-                        else:
-                            st.error(f"❌ {size} - {error}")
-
+                            else:
+                                st.error(f"❌ {size} - {error}")
+            
     # Add a footer with information
     st.markdown("---")
     st.markdown("""
